@@ -16,7 +16,7 @@ class RegionGameHelper:
         self.max_mana = 1224
         self.hp_threshold = 0.83  # 83% - use F1 for moderate healing
         self.hp_critical_threshold = 0.55  # 55% - use F6 for critical healing
-        self.mana_threshold = 0.75  # 75% - changed from 70%
+        self.mana_threshold = 0.55  # 55% - changed from 75%
         self.last_f1_press = 0
         self.last_f6_press = 0  # New for critical healing
         self.last_f4_press = 0
