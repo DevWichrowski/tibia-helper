@@ -10,10 +10,14 @@ import threading
 import datetime
 import os
 
+# Default game values - change these to update defaults throughout the entire script
+DEFAULT_MAX_HP = 1425
+DEFAULT_MAX_MANA = 1234
+
 class RegionGameHelper:
     def __init__(self):
-        self.max_hp = 1415
-        self.max_mana = 1224
+        self.max_hp = DEFAULT_MAX_HP
+        self.max_mana = DEFAULT_MAX_MANA
         self.hp_threshold = 0.83  # 83% - use F1 for moderate healing
         self.hp_critical_threshold = 0.55  # 55% - use F6 for critical healing
         self.mana_threshold = 0.55  # 55% - changed from 75%
@@ -198,7 +202,7 @@ class RegionGameHelper:
                 # Try fast mode first
                 result = self._ocr_from_image(thresh, fast_mode=True, value_type=value_type)
                 
-                # Validate using exact max bounds (HP ≤ 1415, Mana ≤ 1224)
+                # Validate using exact max bounds (HP ≤ 1425, Mana ≤ 1234)
                 max_value = self.max_hp if value_type == "hp" else self.max_mana
                 if result is not None and 1 <= result <= max_value:
                     valid_results.append(result)
@@ -598,7 +602,7 @@ class RegionGameHelper:
     def run(self):
         print("\nStarting region-based game helper... (monitoring every 0.05 seconds - ENHANCED OCR!)")
         print("Detection indicators: ✓ = Detected, ✗ = Using cached value")
-        print("🎮 Smart Healing: F6 (<55% HP), F1 (55-83% HP), F4 (<75% Mana)")
+        print("🎮 Smart Healing: F6 (<55% HP), F1 (55-83% HP), F4 (<55% Mana)")
         print("🛡️ Enhanced OCR: Multiple methods with intelligent fallback strategies")
         print("🔧 Corrupted OCR Recovery: Fixes common misreadings (S64→864, B72→872)")
         print("🛠️ Stability Protection: Requires confirmation for dramatic HP drops (prevents false F6)")
@@ -656,16 +660,16 @@ def main():
                     print("✅ Loaded saved regions!")
                     
                     try:
-                        max_hp_input = input(f"Enter max HP (default {1415}): ").strip()
-                        max_mana_input = input(f"Enter max mana (default {1224}): ").strip()
+                        max_hp_input = input(f"Enter max HP (default {DEFAULT_MAX_HP}): ").strip()
+                        max_mana_input = input(f"Enter max mana (default {DEFAULT_MAX_MANA}): ").strip()
                         
-                        max_hp = int(max_hp_input) if max_hp_input else 1415
-                        max_mana = int(max_mana_input) if max_mana_input else 1224
+                        max_hp = int(max_hp_input) if max_hp_input else DEFAULT_MAX_HP
+                        max_mana = int(max_mana_input) if max_mana_input else DEFAULT_MAX_MANA
                         
                     except ValueError:
                         print("Invalid input, using defaults")
-                        max_hp = 1415
-                        max_mana = 1224
+                        max_hp = DEFAULT_MAX_HP
+                        max_mana = DEFAULT_MAX_MANA
                     
                     helper = RegionGameHelper()
                     helper.max_hp = max_hp
@@ -692,16 +696,16 @@ def main():
     
     # Manual region selection (original flow)
     try:
-        max_hp_input = input(f"Enter max HP (default {1415}): ").strip()
-        max_mana_input = input(f"Enter max mana (default {1224}): ").strip()
+        max_hp_input = input(f"Enter max HP (default {DEFAULT_MAX_HP}): ").strip()
+        max_mana_input = input(f"Enter max mana (default {DEFAULT_MAX_MANA}): ").strip()
         
-        max_hp = int(max_hp_input) if max_hp_input else 1415
-        max_mana = int(max_mana_input) if max_mana_input else 1224
+        max_hp = int(max_hp_input) if max_hp_input else DEFAULT_MAX_HP
+        max_mana = int(max_mana_input) if max_mana_input else DEFAULT_MAX_MANA
         
     except ValueError:
         print("Invalid input, using defaults")
-        max_hp = 1415
-        max_mana = 1224
+        max_hp = DEFAULT_MAX_HP
+        max_mana = DEFAULT_MAX_MANA
     
     helper = RegionGameHelper()
     helper.max_hp = max_hp
