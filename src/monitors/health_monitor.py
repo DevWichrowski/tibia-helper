@@ -39,7 +39,7 @@ class HealthMonitor:
             return last_press_time
     
     def check_hp_and_heal(self, hp_value):
-        """Check HP value and perform healing if needed"""
+        """Check HP value and perform healing if needed - CRITICAL HEALING FIRST!"""
         if hp_value is None or hp_value <= 0:
             self.debug_log(f"DECISION: HP value invalid or zero - no HP action")
             self.consecutive_failures += 1
@@ -55,60 +55,74 @@ class HealthMonitor:
         
         self.debug_log(f"DECISION: HP {hp_value} = {hp_percentage*100:.1f}% (Critical<{self.config.hp_critical_threshold*100}%, Moderate<{self.config.hp_threshold*100}%)")
         
-        # Check for dramatic HP drops that might be OCR errors
-        is_dramatic_drop = False
-        if self.last_stable_hp is not None:
-            hp_drop_percent = (self.last_stable_hp - hp_value) / self.config.max_hp
-            if hp_drop_percent > self.config.dramatic_drop_threshold:
-                is_dramatic_drop = True
-                self.debug_log(f"STABILITY: Dramatic HP drop detected: {self.last_stable_hp} → {hp_value} (drop: {hp_drop_percent*100:.1f}%)")
-        
-        # Critical healing - F6 for HP below threshold
+        # ==========================================
+        # STEP 1: CRITICAL HEALING CHECK - FIRST PRIORITY!
+        # ==========================================
+        # This MUST be checked before anything else to prevent death!
         if hp_percentage < self.config.hp_critical_threshold:
+            self.debug_log(f"🚨 CRITICAL ALERT: HP {hp_percentage*100:.1f}% < {self.config.hp_critical_threshold*100}% - IMMEDIATE CRITICAL HEALING REQUIRED!")
+            
+            # Check for dramatic HP drops that might be OCR errors
+            is_dramatic_drop = False
+            if self.last_stable_hp is not None:
+                hp_drop_percent = (self.last_stable_hp - hp_value) / self.config.max_hp
+                if hp_drop_percent > self.config.dramatic_drop_threshold:
+                    is_dramatic_drop = True
+                    self.debug_log(f"STABILITY: Dramatic HP drop detected: {self.last_stable_hp} → {hp_value} (drop: {hp_drop_percent*100:.1f}%)")
+            
             if is_dramatic_drop:
                 if self.pending_critical_hp is None:
                     # First time seeing this low HP after a dramatic drop
                     self.pending_critical_hp = hp_value
                     self.debug_log(f"STABILITY: Critical HP {hp_percentage*100:.1f}% needs confirmation due to dramatic drop")
-                elif abs(hp_value - self.pending_critical_hp) <= 50:  # Similar HP reading
-                    # Confirmed low HP - proceed with critical healing
-                    self.debug_log(f"STABILITY: Critical HP confirmed ({self.pending_critical_hp} → {hp_value}) - CRITICAL HEAL needed")
+                    return hp_percentage  # Wait for confirmation
+                elif abs(hp_value - self.pending_critical_hp) <= 50:  # Similar HP reading - CONFIRMED CRITICAL
+                    self.debug_log(f"🚨 CONFIRMED CRITICAL: HP drop confirmed ({self.pending_critical_hp} → {hp_value}) - EXECUTING EMERGENCY HEAL!")
                     self.last_critical_heal_press = self.press_key_with_cooldown(
                         self.config.critical_heal_key, 
                         self.last_critical_heal_press, 
-                        "CRITICAL HEAL"
+                        "🚨 EMERGENCY CRITICAL HEAL"
                     )
                     self.pending_critical_hp = None
+                    return hp_percentage  # CRITICAL HEALING EXECUTED - EXIT IMMEDIATELY
                 else:
                     # Different HP reading - update pending
                     self.pending_critical_hp = hp_value
                     self.debug_log(f"STABILITY: Critical HP reading changed, updating pending: {hp_value}")
+                    return hp_percentage
             else:
-                # Not a dramatic drop - proceed with critical healing
-                self.debug_log(f"DECISION: HP {hp_percentage*100:.1f}% < {self.config.hp_critical_threshold*100}% - CRITICAL HEAL needed")
+                # No dramatic drop - IMMEDIATE CRITICAL HEALING
+                self.debug_log(f"🚨 IMMEDIATE CRITICAL: HP {hp_percentage*100:.1f}% - NO DELAY, EXECUTING CRITICAL HEAL NOW!")
                 self.last_critical_heal_press = self.press_key_with_cooldown(
                     self.config.critical_heal_key, 
                     self.last_critical_heal_press, 
-                    "CRITICAL HEAL"
+                    "🚨 IMMEDIATE CRITICAL HEAL"
                 )
                 self.pending_critical_hp = None
+                return hp_percentage  # CRITICAL HEALING EXECUTED - EXIT IMMEDIATELY
         
-        # Moderate healing - F1 for HP between thresholds
+        # ==========================================
+        # STEP 2: MODERATE HEALING - ONLY IF NOT CRITICAL
+        # ==========================================
+        # We only get here if HP is NOT critical (>= 55%)
         elif hp_percentage < self.config.hp_threshold:
-            self.debug_log(f"DECISION: HP {hp_percentage*100:.1f}% < {self.config.hp_threshold*100}% - MODERATE HEAL needed")
+            self.debug_log(f"DECISION: HP {hp_percentage*100:.1f}% needs moderate healing (not critical)")
             self.last_heal_press = self.press_key_with_cooldown(
                 self.config.heal_key, 
                 self.last_heal_press, 
-                "HEAL"
+                "MODERATE HEAL"
             )
             self.pending_critical_hp = None  # Clear any pending critical
         
+        # ==========================================
+        # STEP 3: HEALTHY - NO HEALING NEEDED
+        # ==========================================
         else:
             self.debug_log(f"DECISION: HP {hp_percentage*100:.1f}% is healthy - no healing needed")
             self.pending_critical_hp = None  # Clear any pending critical
         
         # Update stable HP tracking
-        if not is_dramatic_drop or hp_percentage > self.config.hp_critical_threshold:
+        if hp_percentage > self.config.hp_critical_threshold:
             # This reading seems stable, update our reference
             self.last_stable_hp = hp_value
             self.last_stable_hp_time = current_time

@@ -18,7 +18,7 @@ class OCRProcessor:
             self.debug_logger.log(message)
     
     def parse_health_value(self, text, value_type="unknown"):
-        """Parse health/mana value from OCR text - handles corrupted OCR readings"""
+        """Parse health value from OCR text - handles corrupted OCR readings"""
         if not text:
             return None
             
@@ -56,7 +56,7 @@ class OCRProcessor:
                     digit_match = re.search(r'(\d{3,4})', fixed_text)
                     if digit_match:
                         result = int(digit_match.group(1))
-                        max_value = self.config.max_hp if value_type == "hp" else self.config.max_mana
+                        max_value = self.config.max_hp
                         if 1 <= result <= max_value:
                             self.debug_log(f"PARSE {value_type.upper()}: Fixed corrupted text to: {result}")
                             return result
@@ -102,7 +102,7 @@ class OCRProcessor:
             for method_name, thresh in methods:
                 result = self._ocr_from_image(thresh, fast_mode=True, value_type=value_type)
                 
-                max_value = self.config.max_hp if value_type == "hp" else self.config.max_mana
+                max_value = self.config.max_hp
                 if result is not None and 1 <= result <= max_value:
                     valid_results.append(result)
                     self.debug_log(f"OCR {value_type.upper()}: {method_name} method SUCCESS: {result}")
@@ -121,7 +121,7 @@ class OCRProcessor:
                 return result
             
             if all_results:
-                if value_type in ["hp", "mana"]:
+                if value_type == "hp":
                     valid_results = [r for r in all_results if 100 <= r <= 9999]
                     if valid_results:
                         counts = Counter(valid_results)
@@ -228,7 +228,7 @@ class OCRProcessor:
                     if text:
                         self.debug_log(f"FALLBACK {value_type.upper()}: Method {i+1} raw text: '{text}'")
                         parsed = self.parse_health_value(text, value_type)
-                        max_value = self.config.max_hp if value_type == "hp" else self.config.max_mana
+                        max_value = self.config.max_hp
                         if parsed and 1 <= parsed <= max_value:
                             self.debug_log(f"FALLBACK {value_type.upper()}: Method {i+1} SUCCESS: {parsed}")
                             return parsed
@@ -248,7 +248,7 @@ class OCRProcessor:
                             for seq in digit_sequences:
                                 if len(seq) >= 3:
                                     num = int(seq)
-                                    max_value = self.config.max_hp if value_type == "hp" else self.config.max_mana
+                                    max_value = self.config.max_hp
                                     if 1 <= num <= max_value:
                                         self.debug_log(f"FALLBACK {value_type.upper()}: Extracted number from corrupted text: {num}")
                                         return num

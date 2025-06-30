@@ -16,9 +16,9 @@ class DebugLogger:
                 with open(self.log_file, 'w') as f:
                     f.write(f"=== Game Helper Debug Log Started ===\n")
                     f.write(f"Timestamp: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-                    f.write(f"Max HP: {self.config.max_hp}, Max Mana: {self.config.max_mana}\n")
+                    f.write(f"Max HP: {self.config.max_hp}\n")
                     thresholds = self.config.get_threshold_info()
-                    f.write(f"Thresholds: HP Critical={thresholds['hp_critical']}, HP Moderate={thresholds['hp_moderate']}, Mana={thresholds['mana']}\n")
+                    f.write(f"Thresholds: HP Critical={thresholds['hp_critical']}, HP Moderate={thresholds['hp_moderate']}\n")
                     f.write(f"Cooldown: {self.config.cooldown}s\n")
                     f.write("="*50 + "\n\n")
                 print(f"📝 Debug logging enabled: {self.log_file}")
@@ -42,10 +42,10 @@ class DebugLogger:
         self.log(f"=== {section_name} ===")
     
     def log_monitoring_start(self, regions):
-        """Log monitoring start information"""
-        self.log_section("MONITORING STARTED")
-        self.log(f"Monitor frequency: Every {self.config.monitor_frequency} seconds")
-        self.log(f"Regions: HP{regions.get('hp')}, Mana{regions.get('mana')}")
+        """Log monitoring session start"""
+        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.log(f"=== MONITORING SESSION START: {current_time} ===")
+        self.log(f"Region: HP{regions.get('hp')}")
     
     def log_monitoring_stop(self, reason="USER"):
         """Log monitoring stop information"""
