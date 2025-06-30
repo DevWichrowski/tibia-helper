@@ -170,4 +170,4 @@ This tool is for educational purposes. Make sure using automation tools complies
 
 
 ## Start with
-source venv/bin/activate && python3 game_helper_region.py
+source venv/bin/activate && python3 main.py
