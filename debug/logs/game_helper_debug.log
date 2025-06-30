@@ -1,0 +1,1829 @@
+=== Game Helper Debug Log Started ===
+Timestamp: 2025-06-30 10:20:13
+Max HP: 1425, Max Mana: 1234
+Thresholds: HP Critical=55.00000000000001%, HP Moderate=83.0%, Mana=55.00000000000001%
+Cooldown: 0.2s
+==================================================
+
+[10:20:16.808] === MONITORING STARTED ===
+[10:20:16.808] Monitor frequency: Every 0.05 seconds
+[10:20:16.809] Regions: HP(-2188, 78, 227, 60), Mana(-2183, 131, 212, 63)
+[10:20:16.809] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:16.989] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:16.989] PARSE HP: Raw OCR text: '1425'
+[10:20:16.989] PARSE HP: Found bounded number: 1425
+[10:20:16.989] OCR HP: SUCCESS - Found valid value 1425
+[10:20:16.990] OCR HP: OTSU method SUCCESS: 1425
+[10:20:17.061] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:17.062] PARSE HP: Raw OCR text: '1425'
+[10:20:17.062] PARSE HP: Found bounded number: 1425
+[10:20:17.062] OCR HP: SUCCESS - Found valid value 1425
+[10:20:17.062] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:17.065] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:17.065] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:17.065] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:17.203] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:17.203] PARSE MANA: Raw OCR text: '1234'
+[10:20:17.203] PARSE MANA: Found bounded number: 1234
+[10:20:17.203] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:17.203] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:17.272] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:17.272] PARSE MANA: Raw OCR text: '1234'
+[10:20:17.272] PARSE MANA: Found bounded number: 1234
+[10:20:17.272] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:17.272] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:17.272] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:17.272] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:17.272] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:17.272] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:17.272] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:17.273] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:17.273] STABILITY: Updated stable HP reference to 1425
+[10:20:17.273] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:17.273] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:17.326] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:17.466] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:17.467] PARSE HP: Raw OCR text: '1425'
+[10:20:17.467] PARSE HP: Found bounded number: 1425
+[10:20:17.467] OCR HP: SUCCESS - Found valid value 1425
+[10:20:17.467] OCR HP: OTSU method SUCCESS: 1425
+[10:20:17.535] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:17.536] PARSE HP: Raw OCR text: '1425'
+[10:20:17.536] PARSE HP: Found bounded number: 1425
+[10:20:17.536] OCR HP: SUCCESS - Found valid value 1425
+[10:20:17.536] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:17.536] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:17.536] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:17.536] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:17.671] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:17.671] PARSE MANA: Raw OCR text: '1234'
+[10:20:17.671] PARSE MANA: Found bounded number: 1234
+[10:20:17.671] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:17.671] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:17.744] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:17.744] PARSE MANA: Raw OCR text: '1234'
+[10:20:17.744] PARSE MANA: Found bounded number: 1234
+[10:20:17.744] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:17.745] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:17.745] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:17.745] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:17.745] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:17.745] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:17.745] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:17.745] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:17.745] STABILITY: Updated stable HP reference to 1425
+[10:20:17.745] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:17.745] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:17.800] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:17.946] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:17.947] PARSE HP: Raw OCR text: '1425'
+[10:20:17.947] PARSE HP: Found bounded number: 1425
+[10:20:17.947] OCR HP: SUCCESS - Found valid value 1425
+[10:20:17.947] OCR HP: OTSU method SUCCESS: 1425
+[10:20:18.018] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:18.018] PARSE HP: Raw OCR text: '1425'
+[10:20:18.018] PARSE HP: Found bounded number: 1425
+[10:20:18.018] OCR HP: SUCCESS - Found valid value 1425
+[10:20:18.018] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:18.019] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:18.019] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:18.019] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:18.154] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:18.154] PARSE MANA: Raw OCR text: '1234'
+[10:20:18.155] PARSE MANA: Found bounded number: 1234
+[10:20:18.155] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:18.155] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:18.228] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:18.228] PARSE MANA: Raw OCR text: '1234'
+[10:20:18.228] PARSE MANA: Found bounded number: 1234
+[10:20:18.228] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:18.228] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:18.228] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:18.228] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:18.228] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:18.228] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:18.228] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:18.228] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:18.229] STABILITY: Updated stable HP reference to 1425
+[10:20:18.229] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:18.229] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:18.283] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:18.426] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:18.426] PARSE HP: Raw OCR text: '1425'
+[10:20:18.426] PARSE HP: Found bounded number: 1425
+[10:20:18.426] OCR HP: SUCCESS - Found valid value 1425
+[10:20:18.426] OCR HP: OTSU method SUCCESS: 1425
+[10:20:18.496] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:18.496] PARSE HP: Raw OCR text: '1425'
+[10:20:18.496] PARSE HP: Found bounded number: 1425
+[10:20:18.496] OCR HP: SUCCESS - Found valid value 1425
+[10:20:18.496] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:18.496] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:18.496] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:18.496] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:18.647] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:18.647] PARSE MANA: Raw OCR text: '1234'
+[10:20:18.647] PARSE MANA: Found bounded number: 1234
+[10:20:18.648] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:18.648] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:18.718] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:18.718] PARSE MANA: Raw OCR text: '1234'
+[10:20:18.718] PARSE MANA: Found bounded number: 1234
+[10:20:18.718] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:18.718] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:18.718] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:18.718] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:18.718] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:18.718] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:18.719] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:18.719] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:18.719] STABILITY: Updated stable HP reference to 1425
+[10:20:18.719] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:18.719] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:18.774] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:18.915] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:18.915] PARSE HP: Raw OCR text: '1425'
+[10:20:18.915] PARSE HP: Found bounded number: 1425
+[10:20:18.915] OCR HP: SUCCESS - Found valid value 1425
+[10:20:18.915] OCR HP: OTSU method SUCCESS: 1425
+[10:20:18.984] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:18.985] PARSE HP: Raw OCR text: '1425'
+[10:20:18.985] PARSE HP: Found bounded number: 1425
+[10:20:18.985] OCR HP: SUCCESS - Found valid value 1425
+[10:20:18.985] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:18.985] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:18.985] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:18.985] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:19.123] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:19.123] PARSE MANA: Raw OCR text: '1234'
+[10:20:19.123] PARSE MANA: Found bounded number: 1234
+[10:20:19.123] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:19.123] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:19.194] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:19.194] PARSE MANA: Raw OCR text: '1234'
+[10:20:19.195] PARSE MANA: Found bounded number: 1234
+[10:20:19.195] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:19.195] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:19.195] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:19.195] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:19.195] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:19.195] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:19.195] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:19.195] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:19.195] STABILITY: Updated stable HP reference to 1425
+[10:20:19.195] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:19.196] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:19.251] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:19.402] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:19.403] PARSE HP: Raw OCR text: '1425'
+[10:20:19.403] PARSE HP: Found bounded number: 1425
+[10:20:19.403] OCR HP: SUCCESS - Found valid value 1425
+[10:20:19.403] OCR HP: OTSU method SUCCESS: 1425
+[10:20:19.479] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:19.479] PARSE HP: Raw OCR text: '1425'
+[10:20:19.480] PARSE HP: Found bounded number: 1425
+[10:20:19.480] OCR HP: SUCCESS - Found valid value 1425
+[10:20:19.480] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:19.480] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:19.480] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:19.480] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:19.643] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:19.644] PARSE MANA: Raw OCR text: '1234'
+[10:20:19.644] PARSE MANA: Found bounded number: 1234
+[10:20:19.644] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:19.644] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:19.720] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:19.720] PARSE MANA: Raw OCR text: '1234'
+[10:20:19.720] PARSE MANA: Found bounded number: 1234
+[10:20:19.720] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:19.720] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:19.720] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:19.721] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:19.721] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:19.721] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:19.721] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:19.721] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:19.721] STABILITY: Updated stable HP reference to 1425
+[10:20:19.721] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:19.721] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:19.775] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:19.944] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:19.945] PARSE HP: Raw OCR text: '1425'
+[10:20:19.945] PARSE HP: Found bounded number: 1425
+[10:20:19.945] OCR HP: SUCCESS - Found valid value 1425
+[10:20:19.945] OCR HP: OTSU method SUCCESS: 1425
+[10:20:20.313] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:20.313] PARSE HP: Raw OCR text: '1425'
+[10:20:20.313] PARSE HP: Found bounded number: 1425
+[10:20:20.313] OCR HP: SUCCESS - Found valid value 1425
+[10:20:20.313] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:20.313] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:20.313] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:20.314] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:20.463] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:20.464] PARSE MANA: Raw OCR text: '1234'
+[10:20:20.464] PARSE MANA: Found bounded number: 1234
+[10:20:20.464] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:20.464] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:20.536] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:20.536] PARSE MANA: Raw OCR text: '1234'
+[10:20:20.536] PARSE MANA: Found bounded number: 1234
+[10:20:20.536] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:20.537] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:20.537] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:20.537] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:20.537] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:20.537] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:20.537] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:20.537] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:20.537] STABILITY: Updated stable HP reference to 1425
+[10:20:20.537] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:20.537] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:20.592] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:20.739] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:20.739] PARSE HP: Raw OCR text: '1425'
+[10:20:20.739] PARSE HP: Found bounded number: 1425
+[10:20:20.739] OCR HP: SUCCESS - Found valid value 1425
+[10:20:20.739] OCR HP: OTSU method SUCCESS: 1425
+[10:20:20.811] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:20.811] PARSE HP: Raw OCR text: '1425'
+[10:20:20.811] PARSE HP: Found bounded number: 1425
+[10:20:20.811] OCR HP: SUCCESS - Found valid value 1425
+[10:20:20.811] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:20.811] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:20.811] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:20.811] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:21.019] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:21.019] PARSE MANA: Raw OCR text: '1234'
+[10:20:21.020] PARSE MANA: Found bounded number: 1234
+[10:20:21.020] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:21.020] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:21.095] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:21.096] PARSE MANA: Raw OCR text: '1234'
+[10:20:21.096] PARSE MANA: Found bounded number: 1234
+[10:20:21.096] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:21.096] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:21.096] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:21.096] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:21.096] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:21.096] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:21.096] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:21.096] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:21.097] STABILITY: Updated stable HP reference to 1425
+[10:20:21.097] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:21.097] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:21.151] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:21.305] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:21.306] PARSE HP: Raw OCR text: '1425'
+[10:20:21.306] PARSE HP: Found bounded number: 1425
+[10:20:21.306] OCR HP: SUCCESS - Found valid value 1425
+[10:20:21.306] OCR HP: OTSU method SUCCESS: 1425
+[10:20:21.387] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:21.387] PARSE HP: Raw OCR text: '1425'
+[10:20:21.387] PARSE HP: Found bounded number: 1425
+[10:20:21.387] OCR HP: SUCCESS - Found valid value 1425
+[10:20:21.387] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:21.387] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:21.387] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:21.388] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:21.551] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:21.551] PARSE MANA: Raw OCR text: '1234'
+[10:20:21.552] PARSE MANA: Found bounded number: 1234
+[10:20:21.552] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:21.552] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:21.630] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:21.630] PARSE MANA: Raw OCR text: '1234'
+[10:20:21.630] PARSE MANA: Found bounded number: 1234
+[10:20:21.630] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:21.630] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:21.630] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:21.630] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:21.631] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:21.631] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:21.631] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:21.631] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:21.631] STABILITY: Updated stable HP reference to 1425
+[10:20:21.631] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:21.631] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:21.682] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:21.829] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:21.830] PARSE HP: Raw OCR text: '1425'
+[10:20:21.830] PARSE HP: Found bounded number: 1425
+[10:20:21.830] OCR HP: SUCCESS - Found valid value 1425
+[10:20:21.830] OCR HP: OTSU method SUCCESS: 1425
+[10:20:21.901] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:21.901] PARSE HP: Raw OCR text: '1425'
+[10:20:21.902] PARSE HP: Found bounded number: 1425
+[10:20:21.902] OCR HP: SUCCESS - Found valid value 1425
+[10:20:21.902] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:21.902] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:21.902] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:21.902] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:22.040] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:22.040] PARSE MANA: Raw OCR text: '1234'
+[10:20:22.040] PARSE MANA: Found bounded number: 1234
+[10:20:22.040] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:22.040] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:22.113] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:22.113] PARSE MANA: Raw OCR text: '1234'
+[10:20:22.113] PARSE MANA: Found bounded number: 1234
+[10:20:22.113] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:22.113] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:22.113] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:22.114] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:22.114] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:22.114] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:22.114] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:22.114] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:22.114] STABILITY: Updated stable HP reference to 1425
+[10:20:22.114] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:22.114] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:22.169] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:22.319] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:22.319] PARSE HP: Raw OCR text: '1425'
+[10:20:22.319] PARSE HP: Found bounded number: 1425
+[10:20:22.320] OCR HP: SUCCESS - Found valid value 1425
+[10:20:22.320] OCR HP: OTSU method SUCCESS: 1425
+[10:20:22.396] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:22.396] PARSE HP: Raw OCR text: '1425'
+[10:20:22.396] PARSE HP: Found bounded number: 1425
+[10:20:22.396] OCR HP: SUCCESS - Found valid value 1425
+[10:20:22.396] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:22.396] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:22.397] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:22.397] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:22.540] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:22.540] PARSE MANA: Raw OCR text: '1234'
+[10:20:22.540] PARSE MANA: Found bounded number: 1234
+[10:20:22.540] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:22.540] OCR MANA: OTSU method SUCCESS: 1234
+[10:20:22.613] OCR MANA: Scale 3, Config --psm: '1234'
+[10:20:22.613] PARSE MANA: Raw OCR text: '1234'
+[10:20:22.613] PARSE MANA: Found bounded number: 1234
+[10:20:22.613] OCR MANA: SUCCESS - Found valid value 1234
+[10:20:22.613] OCR MANA: InvOTSU method SUCCESS: 1234
+[10:20:22.613] OCR MANA: Multiple valid results, returning most common: 1234
+[10:20:22.613] FALLBACK MANA: Normal OCR succeeded: 1234
+[10:20:22.613] OCR_RESULTS: HP: 1425, Mana: 1234
+[10:20:22.614] DECISION: Checking thresholds - HP: 1425, Mana: 1234
+[10:20:22.614] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:22.614] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:22.614] STABILITY: Updated stable HP reference to 1425
+[10:20:22.614] DECISION: Mana 1234 = 100.0% (Threshold<55.00000000000001%)
+[10:20:22.614] DECISION: Mana 100.0% is sufficient - no mana action
+[10:20:22.668] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:22.808] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:22.809] PARSE HP: Raw OCR text: '1425'
+[10:20:22.809] PARSE HP: Found bounded number: 1425
+[10:20:22.809] OCR HP: SUCCESS - Found valid value 1425
+[10:20:22.809] OCR HP: OTSU method SUCCESS: 1425
+[10:20:22.883] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:22.883] PARSE HP: Raw OCR text: '1425'
+[10:20:22.883] PARSE HP: Found bounded number: 1425
+[10:20:22.883] OCR HP: SUCCESS - Found valid value 1425
+[10:20:22.883] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:22.884] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:22.884] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:22.884] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:23.019] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:23.019] PARSE MANA: Raw OCR text: '1174'
+[10:20:23.020] PARSE MANA: Found bounded number: 1174
+[10:20:23.020] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:23.020] OCR MANA: OTSU method SUCCESS: 1174
+[10:20:23.095] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:23.095] PARSE MANA: Raw OCR text: '1174'
+[10:20:23.095] PARSE MANA: Found bounded number: 1174
+[10:20:23.096] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:23.096] OCR MANA: InvOTSU method SUCCESS: 1174
+[10:20:23.096] OCR MANA: Multiple valid results, returning most common: 1174
+[10:20:23.096] FALLBACK MANA: Normal OCR succeeded: 1174
+[10:20:23.096] OCR_RESULTS: HP: 1425, Mana: 1174
+[10:20:23.096] DECISION: Checking thresholds - HP: 1425, Mana: 1174
+[10:20:23.096] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:23.096] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:23.096] STABILITY: Updated stable HP reference to 1425
+[10:20:23.096] DECISION: Mana 1174 = 95.1% (Threshold<55.00000000000001%)
+[10:20:23.096] DECISION: Mana 95.1% is sufficient - no mana action
+[10:20:23.151] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:23.299] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:23.299] PARSE HP: Raw OCR text: '1425'
+[10:20:23.299] PARSE HP: Found bounded number: 1425
+[10:20:23.299] OCR HP: SUCCESS - Found valid value 1425
+[10:20:23.300] OCR HP: OTSU method SUCCESS: 1425
+[10:20:23.370] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:23.370] PARSE HP: Raw OCR text: '1425'
+[10:20:23.370] PARSE HP: Found bounded number: 1425
+[10:20:23.370] OCR HP: SUCCESS - Found valid value 1425
+[10:20:23.370] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:23.370] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:23.371] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:23.371] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:23.509] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:23.509] PARSE MANA: Raw OCR text: '1174'
+[10:20:23.509] PARSE MANA: Found bounded number: 1174
+[10:20:23.509] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:23.509] OCR MANA: OTSU method SUCCESS: 1174
+[10:20:23.580] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:23.580] PARSE MANA: Raw OCR text: '1174'
+[10:20:23.580] PARSE MANA: Found bounded number: 1174
+[10:20:23.580] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:23.580] OCR MANA: InvOTSU method SUCCESS: 1174
+[10:20:23.580] OCR MANA: Multiple valid results, returning most common: 1174
+[10:20:23.580] FALLBACK MANA: Normal OCR succeeded: 1174
+[10:20:23.580] OCR_RESULTS: HP: 1425, Mana: 1174
+[10:20:23.581] DECISION: Checking thresholds - HP: 1425, Mana: 1174
+[10:20:23.581] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:23.581] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:23.581] STABILITY: Updated stable HP reference to 1425
+[10:20:23.581] DECISION: Mana 1174 = 95.1% (Threshold<55.00000000000001%)
+[10:20:23.581] DECISION: Mana 95.1% is sufficient - no mana action
+[10:20:23.633] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:23.776] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:23.776] PARSE HP: Raw OCR text: '1425'
+[10:20:23.777] PARSE HP: Found bounded number: 1425
+[10:20:23.777] OCR HP: SUCCESS - Found valid value 1425
+[10:20:23.777] OCR HP: OTSU method SUCCESS: 1425
+[10:20:23.846] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:23.847] PARSE HP: Raw OCR text: '1425'
+[10:20:23.847] PARSE HP: Found bounded number: 1425
+[10:20:23.847] OCR HP: SUCCESS - Found valid value 1425
+[10:20:23.847] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:23.847] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:23.847] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:23.847] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:23.983] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:23.984] PARSE MANA: Raw OCR text: '1174'
+[10:20:23.984] PARSE MANA: Found bounded number: 1174
+[10:20:23.984] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:23.984] OCR MANA: OTSU method SUCCESS: 1174
+[10:20:24.058] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:24.058] PARSE MANA: Raw OCR text: '1174'
+[10:20:24.059] PARSE MANA: Found bounded number: 1174
+[10:20:24.059] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:24.059] OCR MANA: InvOTSU method SUCCESS: 1174
+[10:20:24.059] OCR MANA: Multiple valid results, returning most common: 1174
+[10:20:24.059] FALLBACK MANA: Normal OCR succeeded: 1174
+[10:20:24.059] OCR_RESULTS: HP: 1425, Mana: 1174
+[10:20:24.060] DECISION: Checking thresholds - HP: 1425, Mana: 1174
+[10:20:24.060] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:24.060] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:24.060] STABILITY: Updated stable HP reference to 1425
+[10:20:24.060] DECISION: Mana 1174 = 95.1% (Threshold<55.00000000000001%)
+[10:20:24.060] DECISION: Mana 95.1% is sufficient - no mana action
+[10:20:24.110] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:24.264] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:24.265] PARSE HP: Raw OCR text: '1425'
+[10:20:24.265] PARSE HP: Found bounded number: 1425
+[10:20:24.265] OCR HP: SUCCESS - Found valid value 1425
+[10:20:24.265] OCR HP: OTSU method SUCCESS: 1425
+[10:20:24.344] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:24.345] PARSE HP: Raw OCR text: '1425'
+[10:20:24.345] PARSE HP: Found bounded number: 1425
+[10:20:24.345] OCR HP: SUCCESS - Found valid value 1425
+[10:20:24.345] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:24.345] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:24.345] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:24.345] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:24.497] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:24.498] PARSE MANA: Raw OCR text: '1174'
+[10:20:24.498] PARSE MANA: Found bounded number: 1174
+[10:20:24.498] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:24.498] OCR MANA: OTSU method SUCCESS: 1174
+[10:20:24.574] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:24.575] PARSE MANA: Raw OCR text: '1174'
+[10:20:24.575] PARSE MANA: Found bounded number: 1174
+[10:20:24.575] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:24.575] OCR MANA: InvOTSU method SUCCESS: 1174
+[10:20:24.575] OCR MANA: Multiple valid results, returning most common: 1174
+[10:20:24.575] FALLBACK MANA: Normal OCR succeeded: 1174
+[10:20:24.575] OCR_RESULTS: HP: 1425, Mana: 1174
+[10:20:24.576] DECISION: Checking thresholds - HP: 1425, Mana: 1174
+[10:20:24.576] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:24.576] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:24.576] STABILITY: Updated stable HP reference to 1425
+[10:20:24.576] DECISION: Mana 1174 = 95.1% (Threshold<55.00000000000001%)
+[10:20:24.576] DECISION: Mana 95.1% is sufficient - no mana action
+[10:20:24.631] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:24.782] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:24.782] PARSE HP: Raw OCR text: '1425'
+[10:20:24.782] PARSE HP: Found bounded number: 1425
+[10:20:24.782] OCR HP: SUCCESS - Found valid value 1425
+[10:20:24.782] OCR HP: OTSU method SUCCESS: 1425
+[10:20:24.853] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:24.853] PARSE HP: Raw OCR text: '1425'
+[10:20:24.853] PARSE HP: Found bounded number: 1425
+[10:20:24.853] OCR HP: SUCCESS - Found valid value 1425
+[10:20:24.853] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:24.853] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:24.853] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:24.853] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:24.996] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:24.996] PARSE MANA: Raw OCR text: '1174'
+[10:20:24.996] PARSE MANA: Found bounded number: 1174
+[10:20:24.996] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:24.996] OCR MANA: OTSU method SUCCESS: 1174
+[10:20:25.071] OCR MANA: Scale 3, Config --psm: '1174'
+[10:20:25.071] PARSE MANA: Raw OCR text: '1174'
+[10:20:25.071] PARSE MANA: Found bounded number: 1174
+[10:20:25.071] OCR MANA: SUCCESS - Found valid value 1174
+[10:20:25.072] OCR MANA: InvOTSU method SUCCESS: 1174
+[10:20:25.072] OCR MANA: Multiple valid results, returning most common: 1174
+[10:20:25.072] FALLBACK MANA: Normal OCR succeeded: 1174
+[10:20:25.072] OCR_RESULTS: HP: 1425, Mana: 1174
+[10:20:25.072] DECISION: Checking thresholds - HP: 1425, Mana: 1174
+[10:20:25.072] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:25.072] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:25.072] STABILITY: Updated stable HP reference to 1425
+[10:20:25.072] DECISION: Mana 1174 = 95.1% (Threshold<55.00000000000001%)
+[10:20:25.073] DECISION: Mana 95.1% is sufficient - no mana action
+[10:20:25.128] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:25.273] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:25.273] PARSE HP: Raw OCR text: '1425'
+[10:20:25.273] PARSE HP: Found bounded number: 1425
+[10:20:25.273] OCR HP: SUCCESS - Found valid value 1425
+[10:20:25.274] OCR HP: OTSU method SUCCESS: 1425
+[10:20:25.344] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:25.344] PARSE HP: Raw OCR text: '1425'
+[10:20:25.344] PARSE HP: Found bounded number: 1425
+[10:20:25.344] OCR HP: SUCCESS - Found valid value 1425
+[10:20:25.344] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:25.344] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:25.344] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:25.345] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:25.486] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:25.486] PARSE MANA: Raw OCR text: '1178'
+[10:20:25.486] PARSE MANA: Found bounded number: 1178
+[10:20:25.486] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:25.486] OCR MANA: OTSU method SUCCESS: 1178
+[10:20:25.568] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:25.568] PARSE MANA: Raw OCR text: '1178'
+[10:20:25.568] PARSE MANA: Found bounded number: 1178
+[10:20:25.568] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:25.568] OCR MANA: InvOTSU method SUCCESS: 1178
+[10:20:25.569] OCR MANA: Multiple valid results, returning most common: 1178
+[10:20:25.569] FALLBACK MANA: Normal OCR succeeded: 1178
+[10:20:25.569] OCR_RESULTS: HP: 1425, Mana: 1178
+[10:20:25.569] DECISION: Checking thresholds - HP: 1425, Mana: 1178
+[10:20:25.569] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:25.569] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:25.569] STABILITY: Updated stable HP reference to 1425
+[10:20:25.570] DECISION: Mana 1178 = 95.5% (Threshold<55.00000000000001%)
+[10:20:25.570] DECISION: Mana 95.5% is sufficient - no mana action
+[10:20:25.623] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:25.762] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:25.763] PARSE HP: Raw OCR text: '1425'
+[10:20:25.763] PARSE HP: Found bounded number: 1425
+[10:20:25.763] OCR HP: SUCCESS - Found valid value 1425
+[10:20:25.763] OCR HP: OTSU method SUCCESS: 1425
+[10:20:25.836] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:25.836] PARSE HP: Raw OCR text: '1425'
+[10:20:25.836] PARSE HP: Found bounded number: 1425
+[10:20:25.837] OCR HP: SUCCESS - Found valid value 1425
+[10:20:25.837] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:25.837] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:25.837] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:25.837] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:25.982] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:25.982] PARSE MANA: Raw OCR text: '1178'
+[10:20:25.982] PARSE MANA: Found bounded number: 1178
+[10:20:25.982] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:25.982] OCR MANA: OTSU method SUCCESS: 1178
+[10:20:26.051] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:26.051] PARSE MANA: Raw OCR text: '1178'
+[10:20:26.051] PARSE MANA: Found bounded number: 1178
+[10:20:26.051] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:26.051] OCR MANA: InvOTSU method SUCCESS: 1178
+[10:20:26.051] OCR MANA: Multiple valid results, returning most common: 1178
+[10:20:26.051] FALLBACK MANA: Normal OCR succeeded: 1178
+[10:20:26.051] OCR_RESULTS: HP: 1425, Mana: 1178
+[10:20:26.052] DECISION: Checking thresholds - HP: 1425, Mana: 1178
+[10:20:26.052] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:26.052] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:26.052] STABILITY: Updated stable HP reference to 1425
+[10:20:26.052] DECISION: Mana 1178 = 95.5% (Threshold<55.00000000000001%)
+[10:20:26.052] DECISION: Mana 95.5% is sufficient - no mana action
+[10:20:26.105] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:26.247] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:26.247] PARSE HP: Raw OCR text: '1425'
+[10:20:26.247] PARSE HP: Found bounded number: 1425
+[10:20:26.247] OCR HP: SUCCESS - Found valid value 1425
+[10:20:26.248] OCR HP: OTSU method SUCCESS: 1425
+[10:20:26.318] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:26.318] PARSE HP: Raw OCR text: '1425'
+[10:20:26.318] PARSE HP: Found bounded number: 1425
+[10:20:26.318] OCR HP: SUCCESS - Found valid value 1425
+[10:20:26.318] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:26.319] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:26.319] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:26.319] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:26.458] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:26.458] PARSE MANA: Raw OCR text: '1178'
+[10:20:26.459] PARSE MANA: Found bounded number: 1178
+[10:20:26.459] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:26.459] OCR MANA: OTSU method SUCCESS: 1178
+[10:20:26.531] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:26.531] PARSE MANA: Raw OCR text: '1178'
+[10:20:26.531] PARSE MANA: Found bounded number: 1178
+[10:20:26.531] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:26.531] OCR MANA: InvOTSU method SUCCESS: 1178
+[10:20:26.532] OCR MANA: Multiple valid results, returning most common: 1178
+[10:20:26.532] FALLBACK MANA: Normal OCR succeeded: 1178
+[10:20:26.532] OCR_RESULTS: HP: 1425, Mana: 1178
+[10:20:26.532] DECISION: Checking thresholds - HP: 1425, Mana: 1178
+[10:20:26.532] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:26.532] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:26.532] STABILITY: Updated stable HP reference to 1425
+[10:20:26.532] DECISION: Mana 1178 = 95.5% (Threshold<55.00000000000001%)
+[10:20:26.532] DECISION: Mana 95.5% is sufficient - no mana action
+[10:20:26.587] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:26.733] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:26.733] PARSE HP: Raw OCR text: '1425'
+[10:20:26.733] PARSE HP: Found bounded number: 1425
+[10:20:26.733] OCR HP: SUCCESS - Found valid value 1425
+[10:20:26.733] OCR HP: OTSU method SUCCESS: 1425
+[10:20:26.804] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:26.804] PARSE HP: Raw OCR text: '1425'
+[10:20:26.804] PARSE HP: Found bounded number: 1425
+[10:20:26.804] OCR HP: SUCCESS - Found valid value 1425
+[10:20:26.804] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:26.804] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:26.804] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:26.805] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:26.945] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:26.945] PARSE MANA: Raw OCR text: '1178'
+[10:20:26.945] PARSE MANA: Found bounded number: 1178
+[10:20:26.945] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:26.946] OCR MANA: OTSU method SUCCESS: 1178
+[10:20:27.017] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:27.017] PARSE MANA: Raw OCR text: '1178'
+[10:20:27.017] PARSE MANA: Found bounded number: 1178
+[10:20:27.017] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:27.017] OCR MANA: InvOTSU method SUCCESS: 1178
+[10:20:27.018] OCR MANA: Multiple valid results, returning most common: 1178
+[10:20:27.018] FALLBACK MANA: Normal OCR succeeded: 1178
+[10:20:27.018] OCR_RESULTS: HP: 1425, Mana: 1178
+[10:20:27.018] DECISION: Checking thresholds - HP: 1425, Mana: 1178
+[10:20:27.018] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:27.018] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:27.018] STABILITY: Updated stable HP reference to 1425
+[10:20:27.018] DECISION: Mana 1178 = 95.5% (Threshold<55.00000000000001%)
+[10:20:27.018] DECISION: Mana 95.5% is sufficient - no mana action
+[10:20:27.069] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:27.211] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:27.211] PARSE HP: Raw OCR text: '1425'
+[10:20:27.211] PARSE HP: Found bounded number: 1425
+[10:20:27.211] OCR HP: SUCCESS - Found valid value 1425
+[10:20:27.211] OCR HP: OTSU method SUCCESS: 1425
+[10:20:27.284] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:27.284] PARSE HP: Raw OCR text: '1425'
+[10:20:27.285] PARSE HP: Found bounded number: 1425
+[10:20:27.285] OCR HP: SUCCESS - Found valid value 1425
+[10:20:27.285] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:27.285] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:27.285] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:27.285] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:27.422] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:27.422] PARSE MANA: Raw OCR text: '1178'
+[10:20:27.422] PARSE MANA: Found bounded number: 1178
+[10:20:27.422] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:27.422] OCR MANA: OTSU method SUCCESS: 1178
+[10:20:27.495] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:27.495] PARSE MANA: Raw OCR text: '1178'
+[10:20:27.495] PARSE MANA: Found bounded number: 1178
+[10:20:27.495] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:27.495] OCR MANA: InvOTSU method SUCCESS: 1178
+[10:20:27.495] OCR MANA: Multiple valid results, returning most common: 1178
+[10:20:27.496] FALLBACK MANA: Normal OCR succeeded: 1178
+[10:20:27.496] OCR_RESULTS: HP: 1425, Mana: 1178
+[10:20:27.496] DECISION: Checking thresholds - HP: 1425, Mana: 1178
+[10:20:27.496] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:27.496] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:27.496] STABILITY: Updated stable HP reference to 1425
+[10:20:27.496] DECISION: Mana 1178 = 95.5% (Threshold<55.00000000000001%)
+[10:20:27.496] DECISION: Mana 95.5% is sufficient - no mana action
+[10:20:27.551] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:27.690] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:27.690] PARSE HP: Raw OCR text: '1425'
+[10:20:27.690] PARSE HP: Found bounded number: 1425
+[10:20:27.690] OCR HP: SUCCESS - Found valid value 1425
+[10:20:27.691] OCR HP: OTSU method SUCCESS: 1425
+[10:20:27.761] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:27.762] PARSE HP: Raw OCR text: '1425'
+[10:20:27.762] PARSE HP: Found bounded number: 1425
+[10:20:27.762] OCR HP: SUCCESS - Found valid value 1425
+[10:20:27.762] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:27.762] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:27.762] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:27.762] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:27.914] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:27.914] PARSE MANA: Raw OCR text: '1178'
+[10:20:27.914] PARSE MANA: Found bounded number: 1178
+[10:20:27.914] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:27.915] OCR MANA: OTSU method SUCCESS: 1178
+[10:20:27.984] OCR MANA: Scale 3, Config --psm: '1178'
+[10:20:27.984] PARSE MANA: Raw OCR text: '1178'
+[10:20:27.984] PARSE MANA: Found bounded number: 1178
+[10:20:27.985] OCR MANA: SUCCESS - Found valid value 1178
+[10:20:27.985] OCR MANA: InvOTSU method SUCCESS: 1178
+[10:20:27.985] OCR MANA: Multiple valid results, returning most common: 1178
+[10:20:27.985] FALLBACK MANA: Normal OCR succeeded: 1178
+[10:20:27.985] OCR_RESULTS: HP: 1425, Mana: 1178
+[10:20:27.985] DECISION: Checking thresholds - HP: 1425, Mana: 1178
+[10:20:27.985] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:27.985] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:27.985] STABILITY: Updated stable HP reference to 1425
+[10:20:27.986] DECISION: Mana 1178 = 95.5% (Threshold<55.00000000000001%)
+[10:20:27.986] DECISION: Mana 95.5% is sufficient - no mana action
+[10:20:28.039] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:28.181] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:28.182] PARSE HP: Raw OCR text: '1425'
+[10:20:28.182] PARSE HP: Found bounded number: 1425
+[10:20:28.182] OCR HP: SUCCESS - Found valid value 1425
+[10:20:28.182] OCR HP: OTSU method SUCCESS: 1425
+[10:20:28.253] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:28.254] PARSE HP: Raw OCR text: '1425'
+[10:20:28.254] PARSE HP: Found bounded number: 1425
+[10:20:28.254] OCR HP: SUCCESS - Found valid value 1425
+[10:20:28.254] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:28.254] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:28.254] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:28.254] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:28.396] OCR MANA: Scale 3, Config --psm: '1180'
+[10:20:28.397] PARSE MANA: Raw OCR text: '1180'
+[10:20:28.397] PARSE MANA: Found bounded number: 1180
+[10:20:28.397] OCR MANA: SUCCESS - Found valid value 1180
+[10:20:28.397] OCR MANA: OTSU method SUCCESS: 1180
+[10:20:28.466] OCR MANA: Scale 3, Config --psm: '1180'
+[10:20:28.467] PARSE MANA: Raw OCR text: '1180'
+[10:20:28.467] PARSE MANA: Found bounded number: 1180
+[10:20:28.467] OCR MANA: SUCCESS - Found valid value 1180
+[10:20:28.467] OCR MANA: InvOTSU method SUCCESS: 1180
+[10:20:28.467] OCR MANA: Multiple valid results, returning most common: 1180
+[10:20:28.467] FALLBACK MANA: Normal OCR succeeded: 1180
+[10:20:28.467] OCR_RESULTS: HP: 1425, Mana: 1180
+[10:20:28.467] DECISION: Checking thresholds - HP: 1425, Mana: 1180
+[10:20:28.467] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:28.467] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:28.468] STABILITY: Updated stable HP reference to 1425
+[10:20:28.468] DECISION: Mana 1180 = 95.6% (Threshold<55.00000000000001%)
+[10:20:28.468] DECISION: Mana 95.6% is sufficient - no mana action
+[10:20:28.522] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:28.665] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:28.665] PARSE HP: Raw OCR text: '1425'
+[10:20:28.665] PARSE HP: Found bounded number: 1425
+[10:20:28.665] OCR HP: SUCCESS - Found valid value 1425
+[10:20:28.665] OCR HP: OTSU method SUCCESS: 1425
+[10:20:28.735] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:28.735] PARSE HP: Raw OCR text: '1425'
+[10:20:28.735] PARSE HP: Found bounded number: 1425
+[10:20:28.735] OCR HP: SUCCESS - Found valid value 1425
+[10:20:28.735] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:28.735] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:28.735] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:28.736] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:28.879] OCR MANA: Scale 3, Config --psm: '1180'
+[10:20:28.879] PARSE MANA: Raw OCR text: '1180'
+[10:20:28.879] PARSE MANA: Found bounded number: 1180
+[10:20:28.879] OCR MANA: SUCCESS - Found valid value 1180
+[10:20:28.880] OCR MANA: OTSU method SUCCESS: 1180
+[10:20:28.950] OCR MANA: Scale 3, Config --psm: '1180'
+[10:20:28.950] PARSE MANA: Raw OCR text: '1180'
+[10:20:28.951] PARSE MANA: Found bounded number: 1180
+[10:20:28.951] OCR MANA: SUCCESS - Found valid value 1180
+[10:20:28.951] OCR MANA: InvOTSU method SUCCESS: 1180
+[10:20:28.951] OCR MANA: Multiple valid results, returning most common: 1180
+[10:20:28.951] FALLBACK MANA: Normal OCR succeeded: 1180
+[10:20:28.951] OCR_RESULTS: HP: 1425, Mana: 1180
+[10:20:28.951] DECISION: Checking thresholds - HP: 1425, Mana: 1180
+[10:20:28.951] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:28.951] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:28.951] STABILITY: Updated stable HP reference to 1425
+[10:20:28.951] DECISION: Mana 1180 = 95.6% (Threshold<55.00000000000001%)
+[10:20:28.952] DECISION: Mana 95.6% is sufficient - no mana action
+[10:20:29.006] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:29.148] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:29.148] PARSE HP: Raw OCR text: '1425'
+[10:20:29.148] PARSE HP: Found bounded number: 1425
+[10:20:29.148] OCR HP: SUCCESS - Found valid value 1425
+[10:20:29.148] OCR HP: OTSU method SUCCESS: 1425
+[10:20:29.220] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:29.220] PARSE HP: Raw OCR text: '1425'
+[10:20:29.220] PARSE HP: Found bounded number: 1425
+[10:20:29.220] OCR HP: SUCCESS - Found valid value 1425
+[10:20:29.220] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:29.221] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:29.221] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:29.221] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:29.362] OCR MANA: Scale 3, Config --psm: '1180'
+[10:20:29.362] PARSE MANA: Raw OCR text: '1180'
+[10:20:29.363] PARSE MANA: Found bounded number: 1180
+[10:20:29.363] OCR MANA: SUCCESS - Found valid value 1180
+[10:20:29.363] OCR MANA: OTSU method SUCCESS: 1180
+[10:20:29.434] OCR MANA: Scale 3, Config --psm: '1180'
+[10:20:29.434] PARSE MANA: Raw OCR text: '1180'
+[10:20:29.435] PARSE MANA: Found bounded number: 1180
+[10:20:29.435] OCR MANA: SUCCESS - Found valid value 1180
+[10:20:29.435] OCR MANA: InvOTSU method SUCCESS: 1180
+[10:20:29.435] OCR MANA: Multiple valid results, returning most common: 1180
+[10:20:29.435] FALLBACK MANA: Normal OCR succeeded: 1180
+[10:20:29.435] OCR_RESULTS: HP: 1425, Mana: 1180
+[10:20:29.435] DECISION: Checking thresholds - HP: 1425, Mana: 1180
+[10:20:29.435] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:29.436] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:29.436] STABILITY: Updated stable HP reference to 1425
+[10:20:29.436] DECISION: Mana 1180 = 95.6% (Threshold<55.00000000000001%)
+[10:20:29.436] DECISION: Mana 95.6% is sufficient - no mana action
+[10:20:29.490] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:29.635] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:29.635] PARSE HP: Raw OCR text: '1425'
+[10:20:29.636] PARSE HP: Found bounded number: 1425
+[10:20:29.636] OCR HP: SUCCESS - Found valid value 1425
+[10:20:29.636] OCR HP: OTSU method SUCCESS: 1425
+[10:20:29.708] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:29.708] PARSE HP: Raw OCR text: '1425'
+[10:20:29.708] PARSE HP: Found bounded number: 1425
+[10:20:29.708] OCR HP: SUCCESS - Found valid value 1425
+[10:20:29.708] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:29.709] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:29.709] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:29.709] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:29.848] OCR MANA: Scale 3, Config --psm: '1180'
+[10:20:29.848] PARSE MANA: Raw OCR text: '1180'
+[10:20:29.848] PARSE MANA: Found bounded number: 1180
+[10:20:29.848] OCR MANA: SUCCESS - Found valid value 1180
+[10:20:29.848] OCR MANA: OTSU method SUCCESS: 1180
+[10:20:29.919] OCR MANA: Scale 3, Config --psm: '1180'
+[10:20:29.920] PARSE MANA: Raw OCR text: '1180'
+[10:20:29.920] PARSE MANA: Found bounded number: 1180
+[10:20:29.920] OCR MANA: SUCCESS - Found valid value 1180
+[10:20:29.920] OCR MANA: InvOTSU method SUCCESS: 1180
+[10:20:29.920] OCR MANA: Multiple valid results, returning most common: 1180
+[10:20:29.920] FALLBACK MANA: Normal OCR succeeded: 1180
+[10:20:29.920] OCR_RESULTS: HP: 1425, Mana: 1180
+[10:20:29.920] DECISION: Checking thresholds - HP: 1425, Mana: 1180
+[10:20:29.920] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:29.920] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:29.920] STABILITY: Updated stable HP reference to 1425
+[10:20:29.920] DECISION: Mana 1180 = 95.6% (Threshold<55.00000000000001%)
+[10:20:29.921] DECISION: Mana 95.6% is sufficient - no mana action
+[10:20:29.971] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:30.112] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:30.112] PARSE HP: Raw OCR text: '1425'
+[10:20:30.112] PARSE HP: Found bounded number: 1425
+[10:20:30.112] OCR HP: SUCCESS - Found valid value 1425
+[10:20:30.112] OCR HP: OTSU method SUCCESS: 1425
+[10:20:30.194] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:30.195] PARSE HP: Raw OCR text: '1425'
+[10:20:30.195] PARSE HP: Found bounded number: 1425
+[10:20:30.195] OCR HP: SUCCESS - Found valid value 1425
+[10:20:30.195] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:30.195] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:30.195] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:30.195] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:30.342] OCR MANA: Scale 3, Config --psm: '1080'
+[10:20:30.342] PARSE MANA: Raw OCR text: '1080'
+[10:20:30.342] PARSE MANA: Found bounded number: 1080
+[10:20:30.342] OCR MANA: SUCCESS - Found valid value 1080
+[10:20:30.342] OCR MANA: OTSU method SUCCESS: 1080
+[10:20:30.413] OCR MANA: Scale 3, Config --psm: '1080'
+[10:20:30.413] PARSE MANA: Raw OCR text: '1080'
+[10:20:30.414] PARSE MANA: Found bounded number: 1080
+[10:20:30.414] OCR MANA: SUCCESS - Found valid value 1080
+[10:20:30.414] OCR MANA: InvOTSU method SUCCESS: 1080
+[10:20:30.414] OCR MANA: Multiple valid results, returning most common: 1080
+[10:20:30.414] FALLBACK MANA: Normal OCR succeeded: 1080
+[10:20:30.414] OCR_RESULTS: HP: 1425, Mana: 1080
+[10:20:30.414] DECISION: Checking thresholds - HP: 1425, Mana: 1080
+[10:20:30.414] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:30.414] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:30.414] STABILITY: Updated stable HP reference to 1425
+[10:20:30.414] DECISION: Mana 1080 = 87.5% (Threshold<55.00000000000001%)
+[10:20:30.414] DECISION: Mana 87.5% is sufficient - no mana action
+[10:20:30.467] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:30.609] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:30.609] PARSE HP: Raw OCR text: '1425'
+[10:20:30.609] PARSE HP: Found bounded number: 1425
+[10:20:30.609] OCR HP: SUCCESS - Found valid value 1425
+[10:20:30.610] OCR HP: OTSU method SUCCESS: 1425
+[10:20:30.682] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:30.682] PARSE HP: Raw OCR text: '1425'
+[10:20:30.682] PARSE HP: Found bounded number: 1425
+[10:20:30.683] OCR HP: SUCCESS - Found valid value 1425
+[10:20:30.683] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:30.683] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:30.683] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:30.683] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:30.822] OCR MANA: Scale 3, Config --psm: '1080'
+[10:20:30.822] PARSE MANA: Raw OCR text: '1080'
+[10:20:30.822] PARSE MANA: Found bounded number: 1080
+[10:20:30.822] OCR MANA: SUCCESS - Found valid value 1080
+[10:20:30.823] OCR MANA: OTSU method SUCCESS: 1080
+[10:20:30.895] OCR MANA: Scale 3, Config --psm: '1080'
+[10:20:30.895] PARSE MANA: Raw OCR text: '1080'
+[10:20:30.895] PARSE MANA: Found bounded number: 1080
+[10:20:30.895] OCR MANA: SUCCESS - Found valid value 1080
+[10:20:30.895] OCR MANA: InvOTSU method SUCCESS: 1080
+[10:20:30.895] OCR MANA: Multiple valid results, returning most common: 1080
+[10:20:30.896] FALLBACK MANA: Normal OCR succeeded: 1080
+[10:20:30.896] OCR_RESULTS: HP: 1425, Mana: 1080
+[10:20:30.896] DECISION: Checking thresholds - HP: 1425, Mana: 1080
+[10:20:30.896] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:30.896] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:30.896] STABILITY: Updated stable HP reference to 1425
+[10:20:30.896] DECISION: Mana 1080 = 87.5% (Threshold<55.00000000000001%)
+[10:20:30.896] DECISION: Mana 87.5% is sufficient - no mana action
+[10:20:30.949] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:31.094] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:31.094] PARSE HP: Raw OCR text: '1425'
+[10:20:31.094] PARSE HP: Found bounded number: 1425
+[10:20:31.094] OCR HP: SUCCESS - Found valid value 1425
+[10:20:31.095] OCR HP: OTSU method SUCCESS: 1425
+[10:20:31.167] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:31.168] PARSE HP: Raw OCR text: '1425'
+[10:20:31.168] PARSE HP: Found bounded number: 1425
+[10:20:31.168] OCR HP: SUCCESS - Found valid value 1425
+[10:20:31.168] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:31.168] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:31.168] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:31.168] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:31.314] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:31.314] PARSE MANA: Raw OCR text: '1082'
+[10:20:31.314] PARSE MANA: Found bounded number: 1082
+[10:20:31.315] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:31.315] OCR MANA: OTSU method SUCCESS: 1082
+[10:20:31.384] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:31.384] PARSE MANA: Raw OCR text: '1082'
+[10:20:31.384] PARSE MANA: Found bounded number: 1082
+[10:20:31.384] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:31.385] OCR MANA: InvOTSU method SUCCESS: 1082
+[10:20:31.385] OCR MANA: Multiple valid results, returning most common: 1082
+[10:20:31.385] FALLBACK MANA: Normal OCR succeeded: 1082
+[10:20:31.385] OCR_RESULTS: HP: 1425, Mana: 1082
+[10:20:31.385] DECISION: Checking thresholds - HP: 1425, Mana: 1082
+[10:20:31.385] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:31.385] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:31.385] STABILITY: Updated stable HP reference to 1425
+[10:20:31.385] DECISION: Mana 1082 = 87.7% (Threshold<55.00000000000001%)
+[10:20:31.385] DECISION: Mana 87.7% is sufficient - no mana action
+[10:20:31.438] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:31.579] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:31.579] PARSE HP: Raw OCR text: '1425'
+[10:20:31.579] PARSE HP: Found bounded number: 1425
+[10:20:31.580] OCR HP: SUCCESS - Found valid value 1425
+[10:20:31.580] OCR HP: OTSU method SUCCESS: 1425
+[10:20:31.652] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:31.652] PARSE HP: Raw OCR text: '1425'
+[10:20:31.652] PARSE HP: Found bounded number: 1425
+[10:20:31.652] OCR HP: SUCCESS - Found valid value 1425
+[10:20:31.652] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:31.653] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:31.653] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:31.653] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:31.797] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:31.797] PARSE MANA: Raw OCR text: '1082'
+[10:20:31.797] PARSE MANA: Found bounded number: 1082
+[10:20:31.797] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:31.797] OCR MANA: OTSU method SUCCESS: 1082
+[10:20:31.868] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:31.868] PARSE MANA: Raw OCR text: '1082'
+[10:20:31.868] PARSE MANA: Found bounded number: 1082
+[10:20:31.868] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:31.868] OCR MANA: InvOTSU method SUCCESS: 1082
+[10:20:31.868] OCR MANA: Multiple valid results, returning most common: 1082
+[10:20:31.869] FALLBACK MANA: Normal OCR succeeded: 1082
+[10:20:31.869] OCR_RESULTS: HP: 1425, Mana: 1082
+[10:20:31.869] DECISION: Checking thresholds - HP: 1425, Mana: 1082
+[10:20:31.869] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:31.869] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:31.869] STABILITY: Updated stable HP reference to 1425
+[10:20:31.869] DECISION: Mana 1082 = 87.7% (Threshold<55.00000000000001%)
+[10:20:31.869] DECISION: Mana 87.7% is sufficient - no mana action
+[10:20:31.924] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:32.065] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:32.065] PARSE HP: Raw OCR text: '1425'
+[10:20:32.065] PARSE HP: Found bounded number: 1425
+[10:20:32.065] OCR HP: SUCCESS - Found valid value 1425
+[10:20:32.065] OCR HP: OTSU method SUCCESS: 1425
+[10:20:32.136] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:32.136] PARSE HP: Raw OCR text: '1425'
+[10:20:32.136] PARSE HP: Found bounded number: 1425
+[10:20:32.136] OCR HP: SUCCESS - Found valid value 1425
+[10:20:32.136] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:32.137] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:32.137] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:32.137] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:32.279] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:32.279] PARSE MANA: Raw OCR text: '1082'
+[10:20:32.280] PARSE MANA: Found bounded number: 1082
+[10:20:32.280] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:32.280] OCR MANA: OTSU method SUCCESS: 1082
+[10:20:32.350] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:32.350] PARSE MANA: Raw OCR text: '1082'
+[10:20:32.350] PARSE MANA: Found bounded number: 1082
+[10:20:32.350] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:32.350] OCR MANA: InvOTSU method SUCCESS: 1082
+[10:20:32.350] OCR MANA: Multiple valid results, returning most common: 1082
+[10:20:32.351] FALLBACK MANA: Normal OCR succeeded: 1082
+[10:20:32.351] OCR_RESULTS: HP: 1425, Mana: 1082
+[10:20:32.351] DECISION: Checking thresholds - HP: 1425, Mana: 1082
+[10:20:32.351] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:32.351] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:32.351] STABILITY: Updated stable HP reference to 1425
+[10:20:32.351] DECISION: Mana 1082 = 87.7% (Threshold<55.00000000000001%)
+[10:20:32.351] DECISION: Mana 87.7% is sufficient - no mana action
+[10:20:32.405] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:32.585] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:32.586] PARSE HP: Raw OCR text: '1425'
+[10:20:32.586] PARSE HP: Found bounded number: 1425
+[10:20:32.586] OCR HP: SUCCESS - Found valid value 1425
+[10:20:32.586] OCR HP: OTSU method SUCCESS: 1425
+[10:20:32.660] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:32.660] PARSE HP: Raw OCR text: '1425'
+[10:20:32.660] PARSE HP: Found bounded number: 1425
+[10:20:32.660] OCR HP: SUCCESS - Found valid value 1425
+[10:20:32.660] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:32.661] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:32.661] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:32.661] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:32.801] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:32.801] PARSE MANA: Raw OCR text: '1082'
+[10:20:32.801] PARSE MANA: Found bounded number: 1082
+[10:20:32.801] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:32.801] OCR MANA: OTSU method SUCCESS: 1082
+[10:20:32.874] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:32.874] PARSE MANA: Raw OCR text: '1082'
+[10:20:32.874] PARSE MANA: Found bounded number: 1082
+[10:20:32.874] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:32.874] OCR MANA: InvOTSU method SUCCESS: 1082
+[10:20:32.874] OCR MANA: Multiple valid results, returning most common: 1082
+[10:20:32.875] FALLBACK MANA: Normal OCR succeeded: 1082
+[10:20:32.875] OCR_RESULTS: HP: 1425, Mana: 1082
+[10:20:32.875] DECISION: Checking thresholds - HP: 1425, Mana: 1082
+[10:20:32.875] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:32.875] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:32.875] STABILITY: Updated stable HP reference to 1425
+[10:20:32.875] DECISION: Mana 1082 = 87.7% (Threshold<55.00000000000001%)
+[10:20:32.875] DECISION: Mana 87.7% is sufficient - no mana action
+[10:20:32.931] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:33.121] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:33.121] PARSE HP: Raw OCR text: '1425'
+[10:20:33.121] PARSE HP: Found bounded number: 1425
+[10:20:33.122] OCR HP: SUCCESS - Found valid value 1425
+[10:20:33.122] OCR HP: OTSU method SUCCESS: 1425
+[10:20:33.202] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:33.202] PARSE HP: Raw OCR text: '1425'
+[10:20:33.202] PARSE HP: Found bounded number: 1425
+[10:20:33.202] OCR HP: SUCCESS - Found valid value 1425
+[10:20:33.202] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:33.202] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:33.202] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:33.202] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:33.355] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:33.356] PARSE MANA: Raw OCR text: '1082'
+[10:20:33.356] PARSE MANA: Found bounded number: 1082
+[10:20:33.356] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:33.356] OCR MANA: OTSU method SUCCESS: 1082
+[10:20:33.430] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:33.431] PARSE MANA: Raw OCR text: '1082'
+[10:20:33.431] PARSE MANA: Found bounded number: 1082
+[10:20:33.431] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:33.431] OCR MANA: InvOTSU method SUCCESS: 1082
+[10:20:33.431] OCR MANA: Multiple valid results, returning most common: 1082
+[10:20:33.431] FALLBACK MANA: Normal OCR succeeded: 1082
+[10:20:33.431] OCR_RESULTS: HP: 1425, Mana: 1082
+[10:20:33.431] DECISION: Checking thresholds - HP: 1425, Mana: 1082
+[10:20:33.431] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:33.431] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:33.432] STABILITY: Updated stable HP reference to 1425
+[10:20:33.432] DECISION: Mana 1082 = 87.7% (Threshold<55.00000000000001%)
+[10:20:33.432] DECISION: Mana 87.7% is sufficient - no mana action
+[10:20:33.486] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:33.628] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:33.628] PARSE HP: Raw OCR text: '1425'
+[10:20:33.628] PARSE HP: Found bounded number: 1425
+[10:20:33.628] OCR HP: SUCCESS - Found valid value 1425
+[10:20:33.628] OCR HP: OTSU method SUCCESS: 1425
+[10:20:33.701] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:33.701] PARSE HP: Raw OCR text: '1425'
+[10:20:33.701] PARSE HP: Found bounded number: 1425
+[10:20:33.701] OCR HP: SUCCESS - Found valid value 1425
+[10:20:33.701] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:33.701] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:33.701] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:33.702] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:33.846] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:33.846] PARSE MANA: Raw OCR text: '1082'
+[10:20:33.846] PARSE MANA: Found bounded number: 1082
+[10:20:33.846] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:33.846] OCR MANA: OTSU method SUCCESS: 1082
+[10:20:33.918] OCR MANA: Scale 3, Config --psm: '1082'
+[10:20:33.918] PARSE MANA: Raw OCR text: '1082'
+[10:20:33.918] PARSE MANA: Found bounded number: 1082
+[10:20:33.918] OCR MANA: SUCCESS - Found valid value 1082
+[10:20:33.918] OCR MANA: InvOTSU method SUCCESS: 1082
+[10:20:33.918] OCR MANA: Multiple valid results, returning most common: 1082
+[10:20:33.919] FALLBACK MANA: Normal OCR succeeded: 1082
+[10:20:33.919] OCR_RESULTS: HP: 1425, Mana: 1082
+[10:20:33.919] DECISION: Checking thresholds - HP: 1425, Mana: 1082
+[10:20:33.919] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:33.919] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:33.919] STABILITY: Updated stable HP reference to 1425
+[10:20:33.919] DECISION: Mana 1082 = 87.7% (Threshold<55.00000000000001%)
+[10:20:33.919] DECISION: Mana 87.7% is sufficient - no mana action
+[10:20:33.970] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:34.114] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:34.114] PARSE HP: Raw OCR text: '1425'
+[10:20:34.115] PARSE HP: Found bounded number: 1425
+[10:20:34.115] OCR HP: SUCCESS - Found valid value 1425
+[10:20:34.115] OCR HP: OTSU method SUCCESS: 1425
+[10:20:34.186] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:34.186] PARSE HP: Raw OCR text: '1425'
+[10:20:34.186] PARSE HP: Found bounded number: 1425
+[10:20:34.186] OCR HP: SUCCESS - Found valid value 1425
+[10:20:34.186] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:34.186] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:34.186] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:34.186] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:34.330] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:34.330] PARSE MANA: Raw OCR text: '1084'
+[10:20:34.330] PARSE MANA: Found bounded number: 1084
+[10:20:34.330] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:34.330] OCR MANA: OTSU method SUCCESS: 1084
+[10:20:34.402] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:34.402] PARSE MANA: Raw OCR text: '1084'
+[10:20:34.402] PARSE MANA: Found bounded number: 1084
+[10:20:34.402] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:34.402] OCR MANA: InvOTSU method SUCCESS: 1084
+[10:20:34.402] OCR MANA: Multiple valid results, returning most common: 1084
+[10:20:34.402] FALLBACK MANA: Normal OCR succeeded: 1084
+[10:20:34.402] OCR_RESULTS: HP: 1425, Mana: 1084
+[10:20:34.403] DECISION: Checking thresholds - HP: 1425, Mana: 1084
+[10:20:34.403] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:34.403] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:34.403] STABILITY: Updated stable HP reference to 1425
+[10:20:34.403] DECISION: Mana 1084 = 87.8% (Threshold<55.00000000000001%)
+[10:20:34.403] DECISION: Mana 87.8% is sufficient - no mana action
+[10:20:34.455] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:34.607] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:34.607] PARSE HP: Raw OCR text: '1425'
+[10:20:34.608] PARSE HP: Found bounded number: 1425
+[10:20:34.608] OCR HP: SUCCESS - Found valid value 1425
+[10:20:34.608] OCR HP: OTSU method SUCCESS: 1425
+[10:20:34.682] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:34.682] PARSE HP: Raw OCR text: '1425'
+[10:20:34.682] PARSE HP: Found bounded number: 1425
+[10:20:34.682] OCR HP: SUCCESS - Found valid value 1425
+[10:20:34.682] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:34.682] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:34.682] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:34.682] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:34.838] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:34.838] PARSE MANA: Raw OCR text: '1084'
+[10:20:34.838] PARSE MANA: Found bounded number: 1084
+[10:20:34.838] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:34.838] OCR MANA: OTSU method SUCCESS: 1084
+[10:20:34.911] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:34.911] PARSE MANA: Raw OCR text: '1084'
+[10:20:34.912] PARSE MANA: Found bounded number: 1084
+[10:20:34.912] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:34.912] OCR MANA: InvOTSU method SUCCESS: 1084
+[10:20:34.912] OCR MANA: Multiple valid results, returning most common: 1084
+[10:20:34.912] FALLBACK MANA: Normal OCR succeeded: 1084
+[10:20:34.912] OCR_RESULTS: HP: 1425, Mana: 1084
+[10:20:34.912] DECISION: Checking thresholds - HP: 1425, Mana: 1084
+[10:20:34.912] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:34.912] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:34.912] STABILITY: Updated stable HP reference to 1425
+[10:20:34.913] DECISION: Mana 1084 = 87.8% (Threshold<55.00000000000001%)
+[10:20:34.913] DECISION: Mana 87.8% is sufficient - no mana action
+[10:20:34.967] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:35.114] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:35.114] PARSE HP: Raw OCR text: '1425'
+[10:20:35.114] PARSE HP: Found bounded number: 1425
+[10:20:35.114] OCR HP: SUCCESS - Found valid value 1425
+[10:20:35.114] OCR HP: OTSU method SUCCESS: 1425
+[10:20:35.186] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:35.186] PARSE HP: Raw OCR text: '1425'
+[10:20:35.186] PARSE HP: Found bounded number: 1425
+[10:20:35.187] OCR HP: SUCCESS - Found valid value 1425
+[10:20:35.187] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:35.187] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:35.187] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:35.187] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:35.329] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:35.329] PARSE MANA: Raw OCR text: '1084'
+[10:20:35.329] PARSE MANA: Found bounded number: 1084
+[10:20:35.329] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:35.329] OCR MANA: OTSU method SUCCESS: 1084
+[10:20:35.400] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:35.400] PARSE MANA: Raw OCR text: '1084'
+[10:20:35.400] PARSE MANA: Found bounded number: 1084
+[10:20:35.400] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:35.400] OCR MANA: InvOTSU method SUCCESS: 1084
+[10:20:35.400] OCR MANA: Multiple valid results, returning most common: 1084
+[10:20:35.401] FALLBACK MANA: Normal OCR succeeded: 1084
+[10:20:35.401] OCR_RESULTS: HP: 1425, Mana: 1084
+[10:20:35.401] DECISION: Checking thresholds - HP: 1425, Mana: 1084
+[10:20:35.401] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:35.401] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:35.401] STABILITY: Updated stable HP reference to 1425
+[10:20:35.401] DECISION: Mana 1084 = 87.8% (Threshold<55.00000000000001%)
+[10:20:35.401] DECISION: Mana 87.8% is sufficient - no mana action
+[10:20:35.455] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:35.600] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:35.601] PARSE HP: Raw OCR text: '1425'
+[10:20:35.601] PARSE HP: Found bounded number: 1425
+[10:20:35.601] OCR HP: SUCCESS - Found valid value 1425
+[10:20:35.601] OCR HP: OTSU method SUCCESS: 1425
+[10:20:35.672] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:35.672] PARSE HP: Raw OCR text: '1425'
+[10:20:35.673] PARSE HP: Found bounded number: 1425
+[10:20:35.673] OCR HP: SUCCESS - Found valid value 1425
+[10:20:35.673] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:35.673] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:35.673] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:35.673] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:35.813] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:35.813] PARSE MANA: Raw OCR text: '1084'
+[10:20:35.813] PARSE MANA: Found bounded number: 1084
+[10:20:35.813] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:35.813] OCR MANA: OTSU method SUCCESS: 1084
+[10:20:35.882] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:35.882] PARSE MANA: Raw OCR text: '1084'
+[10:20:35.882] PARSE MANA: Found bounded number: 1084
+[10:20:35.882] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:35.882] OCR MANA: InvOTSU method SUCCESS: 1084
+[10:20:35.883] OCR MANA: Multiple valid results, returning most common: 1084
+[10:20:35.883] FALLBACK MANA: Normal OCR succeeded: 1084
+[10:20:35.883] OCR_RESULTS: HP: 1425, Mana: 1084
+[10:20:35.883] DECISION: Checking thresholds - HP: 1425, Mana: 1084
+[10:20:35.883] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:35.883] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:35.883] STABILITY: Updated stable HP reference to 1425
+[10:20:35.883] DECISION: Mana 1084 = 87.8% (Threshold<55.00000000000001%)
+[10:20:35.883] DECISION: Mana 87.8% is sufficient - no mana action
+[10:20:35.938] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:36.079] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:36.080] PARSE HP: Raw OCR text: '1425'
+[10:20:36.080] PARSE HP: Found bounded number: 1425
+[10:20:36.080] OCR HP: SUCCESS - Found valid value 1425
+[10:20:36.080] OCR HP: OTSU method SUCCESS: 1425
+[10:20:36.151] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:36.151] PARSE HP: Raw OCR text: '1425'
+[10:20:36.151] PARSE HP: Found bounded number: 1425
+[10:20:36.151] OCR HP: SUCCESS - Found valid value 1425
+[10:20:36.151] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:36.151] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:36.151] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:36.151] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:36.295] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:36.295] PARSE MANA: Raw OCR text: '1084'
+[10:20:36.295] PARSE MANA: Found bounded number: 1084
+[10:20:36.295] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:36.296] OCR MANA: OTSU method SUCCESS: 1084
+[10:20:36.367] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:36.368] PARSE MANA: Raw OCR text: '1084'
+[10:20:36.368] PARSE MANA: Found bounded number: 1084
+[10:20:36.368] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:36.368] OCR MANA: InvOTSU method SUCCESS: 1084
+[10:20:36.368] OCR MANA: Multiple valid results, returning most common: 1084
+[10:20:36.368] FALLBACK MANA: Normal OCR succeeded: 1084
+[10:20:36.368] OCR_RESULTS: HP: 1425, Mana: 1084
+[10:20:36.368] DECISION: Checking thresholds - HP: 1425, Mana: 1084
+[10:20:36.369] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:36.369] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:36.369] STABILITY: Updated stable HP reference to 1425
+[10:20:36.369] DECISION: Mana 1084 = 87.8% (Threshold<55.00000000000001%)
+[10:20:36.369] DECISION: Mana 87.8% is sufficient - no mana action
+[10:20:36.422] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:36.586] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:36.587] PARSE HP: Raw OCR text: '1425'
+[10:20:36.587] PARSE HP: Found bounded number: 1425
+[10:20:36.587] OCR HP: SUCCESS - Found valid value 1425
+[10:20:36.587] OCR HP: OTSU method SUCCESS: 1425
+[10:20:36.659] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:36.659] PARSE HP: Raw OCR text: '1425'
+[10:20:36.659] PARSE HP: Found bounded number: 1425
+[10:20:36.659] OCR HP: SUCCESS - Found valid value 1425
+[10:20:36.659] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:36.659] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:36.660] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:36.660] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:36.799] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:36.799] PARSE MANA: Raw OCR text: '1084'
+[10:20:36.800] PARSE MANA: Found bounded number: 1084
+[10:20:36.800] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:36.800] OCR MANA: OTSU method SUCCESS: 1084
+[10:20:36.869] OCR MANA: Scale 3, Config --psm: '1084'
+[10:20:36.870] PARSE MANA: Raw OCR text: '1084'
+[10:20:36.870] PARSE MANA: Found bounded number: 1084
+[10:20:36.870] OCR MANA: SUCCESS - Found valid value 1084
+[10:20:36.870] OCR MANA: InvOTSU method SUCCESS: 1084
+[10:20:36.870] OCR MANA: Multiple valid results, returning most common: 1084
+[10:20:36.870] FALLBACK MANA: Normal OCR succeeded: 1084
+[10:20:36.870] OCR_RESULTS: HP: 1425, Mana: 1084
+[10:20:36.870] DECISION: Checking thresholds - HP: 1425, Mana: 1084
+[10:20:36.870] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:36.870] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:36.871] STABILITY: Updated stable HP reference to 1425
+[10:20:36.871] DECISION: Mana 1084 = 87.8% (Threshold<55.00000000000001%)
+[10:20:36.871] DECISION: Mana 87.8% is sufficient - no mana action
+[10:20:36.925] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:37.068] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:37.068] PARSE HP: Raw OCR text: '1425'
+[10:20:37.068] PARSE HP: Found bounded number: 1425
+[10:20:37.068] OCR HP: SUCCESS - Found valid value 1425
+[10:20:37.069] OCR HP: OTSU method SUCCESS: 1425
+[10:20:37.154] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:37.154] PARSE HP: Raw OCR text: '1425'
+[10:20:37.154] PARSE HP: Found bounded number: 1425
+[10:20:37.155] OCR HP: SUCCESS - Found valid value 1425
+[10:20:37.155] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:37.155] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:37.155] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:37.155] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:37.294] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:37.294] PARSE MANA: Raw OCR text: '1088'
+[10:20:37.294] PARSE MANA: Found bounded number: 1088
+[10:20:37.294] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:37.294] OCR MANA: OTSU method SUCCESS: 1088
+[10:20:37.367] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:37.367] PARSE MANA: Raw OCR text: '1088'
+[10:20:37.367] PARSE MANA: Found bounded number: 1088
+[10:20:37.368] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:37.368] OCR MANA: InvOTSU method SUCCESS: 1088
+[10:20:37.368] OCR MANA: Multiple valid results, returning most common: 1088
+[10:20:37.368] FALLBACK MANA: Normal OCR succeeded: 1088
+[10:20:37.368] OCR_RESULTS: HP: 1425, Mana: 1088
+[10:20:37.368] DECISION: Checking thresholds - HP: 1425, Mana: 1088
+[10:20:37.368] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:37.368] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:37.368] STABILITY: Updated stable HP reference to 1425
+[10:20:37.368] DECISION: Mana 1088 = 88.2% (Threshold<55.00000000000001%)
+[10:20:37.368] DECISION: Mana 88.2% is sufficient - no mana action
+[10:20:37.422] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:37.566] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:37.566] PARSE HP: Raw OCR text: '1425'
+[10:20:37.566] PARSE HP: Found bounded number: 1425
+[10:20:37.566] OCR HP: SUCCESS - Found valid value 1425
+[10:20:37.566] OCR HP: OTSU method SUCCESS: 1425
+[10:20:37.638] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:37.638] PARSE HP: Raw OCR text: '1425'
+[10:20:37.638] PARSE HP: Found bounded number: 1425
+[10:20:37.638] OCR HP: SUCCESS - Found valid value 1425
+[10:20:37.638] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:37.638] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:37.638] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:37.638] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:37.779] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:37.779] PARSE MANA: Raw OCR text: '1088'
+[10:20:37.779] PARSE MANA: Found bounded number: 1088
+[10:20:37.779] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:37.779] OCR MANA: OTSU method SUCCESS: 1088
+[10:20:37.851] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:37.851] PARSE MANA: Raw OCR text: '1088'
+[10:20:37.851] PARSE MANA: Found bounded number: 1088
+[10:20:37.851] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:37.851] OCR MANA: InvOTSU method SUCCESS: 1088
+[10:20:37.851] OCR MANA: Multiple valid results, returning most common: 1088
+[10:20:37.852] FALLBACK MANA: Normal OCR succeeded: 1088
+[10:20:37.852] OCR_RESULTS: HP: 1425, Mana: 1088
+[10:20:37.852] DECISION: Checking thresholds - HP: 1425, Mana: 1088
+[10:20:37.852] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:37.852] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:37.852] STABILITY: Updated stable HP reference to 1425
+[10:20:37.852] DECISION: Mana 1088 = 88.2% (Threshold<55.00000000000001%)
+[10:20:37.852] DECISION: Mana 88.2% is sufficient - no mana action
+[10:20:37.908] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:38.040] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:38.041] PARSE HP: Raw OCR text: '1425'
+[10:20:38.041] PARSE HP: Found bounded number: 1425
+[10:20:38.041] OCR HP: SUCCESS - Found valid value 1425
+[10:20:38.041] OCR HP: OTSU method SUCCESS: 1425
+[10:20:38.115] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:38.115] PARSE HP: Raw OCR text: '1425'
+[10:20:38.115] PARSE HP: Found bounded number: 1425
+[10:20:38.115] OCR HP: SUCCESS - Found valid value 1425
+[10:20:38.115] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:38.115] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:38.116] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:38.116] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:38.260] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:38.260] PARSE MANA: Raw OCR text: '1088'
+[10:20:38.260] PARSE MANA: Found bounded number: 1088
+[10:20:38.260] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:38.260] OCR MANA: OTSU method SUCCESS: 1088
+[10:20:38.329] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:38.329] PARSE MANA: Raw OCR text: '1088'
+[10:20:38.329] PARSE MANA: Found bounded number: 1088
+[10:20:38.329] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:38.329] OCR MANA: InvOTSU method SUCCESS: 1088
+[10:20:38.329] OCR MANA: Multiple valid results, returning most common: 1088
+[10:20:38.329] FALLBACK MANA: Normal OCR succeeded: 1088
+[10:20:38.329] OCR_RESULTS: HP: 1425, Mana: 1088
+[10:20:38.330] DECISION: Checking thresholds - HP: 1425, Mana: 1088
+[10:20:38.330] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:38.330] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:38.330] STABILITY: Updated stable HP reference to 1425
+[10:20:38.330] DECISION: Mana 1088 = 88.2% (Threshold<55.00000000000001%)
+[10:20:38.330] DECISION: Mana 88.2% is sufficient - no mana action
+[10:20:38.384] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:38.529] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:38.529] PARSE HP: Raw OCR text: '1425'
+[10:20:38.529] PARSE HP: Found bounded number: 1425
+[10:20:38.529] OCR HP: SUCCESS - Found valid value 1425
+[10:20:38.529] OCR HP: OTSU method SUCCESS: 1425
+[10:20:38.599] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:38.599] PARSE HP: Raw OCR text: '1425'
+[10:20:38.599] PARSE HP: Found bounded number: 1425
+[10:20:38.599] OCR HP: SUCCESS - Found valid value 1425
+[10:20:38.600] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:38.600] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:38.600] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:38.600] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:38.738] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:38.738] PARSE MANA: Raw OCR text: '1088'
+[10:20:38.738] PARSE MANA: Found bounded number: 1088
+[10:20:38.738] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:38.738] OCR MANA: OTSU method SUCCESS: 1088
+[10:20:38.813] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:38.813] PARSE MANA: Raw OCR text: '1088'
+[10:20:38.813] PARSE MANA: Found bounded number: 1088
+[10:20:38.813] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:38.813] OCR MANA: InvOTSU method SUCCESS: 1088
+[10:20:38.813] OCR MANA: Multiple valid results, returning most common: 1088
+[10:20:38.813] FALLBACK MANA: Normal OCR succeeded: 1088
+[10:20:38.813] OCR_RESULTS: HP: 1425, Mana: 1088
+[10:20:38.814] DECISION: Checking thresholds - HP: 1425, Mana: 1088
+[10:20:38.814] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:38.814] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:38.814] STABILITY: Updated stable HP reference to 1425
+[10:20:38.814] DECISION: Mana 1088 = 88.2% (Threshold<55.00000000000001%)
+[10:20:38.814] DECISION: Mana 88.2% is sufficient - no mana action
+[10:20:38.869] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:39.010] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:39.011] PARSE HP: Raw OCR text: '1425'
+[10:20:39.011] PARSE HP: Found bounded number: 1425
+[10:20:39.011] OCR HP: SUCCESS - Found valid value 1425
+[10:20:39.011] OCR HP: OTSU method SUCCESS: 1425
+[10:20:39.145] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:39.145] PARSE HP: Raw OCR text: '1425'
+[10:20:39.145] PARSE HP: Found bounded number: 1425
+[10:20:39.145] OCR HP: SUCCESS - Found valid value 1425
+[10:20:39.145] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:39.145] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:39.146] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:39.146] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:39.352] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:39.352] PARSE MANA: Raw OCR text: '1088'
+[10:20:39.352] PARSE MANA: Found bounded number: 1088
+[10:20:39.352] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:39.352] OCR MANA: OTSU method SUCCESS: 1088
+[10:20:39.448] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:39.448] PARSE MANA: Raw OCR text: '1088'
+[10:20:39.448] PARSE MANA: Found bounded number: 1088
+[10:20:39.448] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:39.448] OCR MANA: InvOTSU method SUCCESS: 1088
+[10:20:39.448] OCR MANA: Multiple valid results, returning most common: 1088
+[10:20:39.448] FALLBACK MANA: Normal OCR succeeded: 1088
+[10:20:39.449] OCR_RESULTS: HP: 1425, Mana: 1088
+[10:20:39.449] DECISION: Checking thresholds - HP: 1425, Mana: 1088
+[10:20:39.449] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:39.449] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:39.449] STABILITY: Updated stable HP reference to 1425
+[10:20:39.449] DECISION: Mana 1088 = 88.2% (Threshold<55.00000000000001%)
+[10:20:39.449] DECISION: Mana 88.2% is sufficient - no mana action
+[10:20:39.500] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:39.666] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:39.666] PARSE HP: Raw OCR text: '1425'
+[10:20:39.666] PARSE HP: Found bounded number: 1425
+[10:20:39.666] OCR HP: SUCCESS - Found valid value 1425
+[10:20:39.666] OCR HP: OTSU method SUCCESS: 1425
+[10:20:39.741] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:39.741] PARSE HP: Raw OCR text: '1425'
+[10:20:39.742] PARSE HP: Found bounded number: 1425
+[10:20:39.742] OCR HP: SUCCESS - Found valid value 1425
+[10:20:39.743] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:39.743] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:39.743] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:39.743] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:39.898] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:39.898] PARSE MANA: Raw OCR text: '1088'
+[10:20:39.899] PARSE MANA: Found bounded number: 1088
+[10:20:39.899] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:39.899] OCR MANA: OTSU method SUCCESS: 1088
+[10:20:39.973] OCR MANA: Scale 3, Config --psm: '1088'
+[10:20:39.973] PARSE MANA: Raw OCR text: '1088'
+[10:20:39.973] PARSE MANA: Found bounded number: 1088
+[10:20:39.973] OCR MANA: SUCCESS - Found valid value 1088
+[10:20:39.973] OCR MANA: InvOTSU method SUCCESS: 1088
+[10:20:39.973] OCR MANA: Multiple valid results, returning most common: 1088
+[10:20:39.973] FALLBACK MANA: Normal OCR succeeded: 1088
+[10:20:39.973] OCR_RESULTS: HP: 1425, Mana: 1088
+[10:20:39.973] DECISION: Checking thresholds - HP: 1425, Mana: 1088
+[10:20:39.974] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:39.974] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:39.974] STABILITY: Updated stable HP reference to 1425
+[10:20:39.974] DECISION: Mana 1088 = 88.2% (Threshold<55.00000000000001%)
+[10:20:39.974] DECISION: Mana 88.2% is sufficient - no mana action
+[10:20:40.027] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:40.174] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:40.174] PARSE HP: Raw OCR text: '1425'
+[10:20:40.175] PARSE HP: Found bounded number: 1425
+[10:20:40.175] OCR HP: SUCCESS - Found valid value 1425
+[10:20:40.175] OCR HP: OTSU method SUCCESS: 1425
+[10:20:40.252] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:40.252] PARSE HP: Raw OCR text: '1425'
+[10:20:40.252] PARSE HP: Found bounded number: 1425
+[10:20:40.252] OCR HP: SUCCESS - Found valid value 1425
+[10:20:40.252] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:40.252] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:40.252] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:40.253] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:40.407] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:40.407] PARSE MANA: Raw OCR text: '1092'
+[10:20:40.407] PARSE MANA: Found bounded number: 1092
+[10:20:40.407] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:40.407] OCR MANA: OTSU method SUCCESS: 1092
+[10:20:40.482] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:40.483] PARSE MANA: Raw OCR text: '1092'
+[10:20:40.483] PARSE MANA: Found bounded number: 1092
+[10:20:40.483] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:40.483] OCR MANA: InvOTSU method SUCCESS: 1092
+[10:20:40.483] OCR MANA: Multiple valid results, returning most common: 1092
+[10:20:40.483] FALLBACK MANA: Normal OCR succeeded: 1092
+[10:20:40.483] OCR_RESULTS: HP: 1425, Mana: 1092
+[10:20:40.483] DECISION: Checking thresholds - HP: 1425, Mana: 1092
+[10:20:40.483] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:40.483] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:40.484] STABILITY: Updated stable HP reference to 1425
+[10:20:40.484] DECISION: Mana 1092 = 88.5% (Threshold<55.00000000000001%)
+[10:20:40.484] DECISION: Mana 88.5% is sufficient - no mana action
+[10:20:40.539] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:40.686] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:40.687] PARSE HP: Raw OCR text: '1425'
+[10:20:40.687] PARSE HP: Found bounded number: 1425
+[10:20:40.687] OCR HP: SUCCESS - Found valid value 1425
+[10:20:40.687] OCR HP: OTSU method SUCCESS: 1425
+[10:20:40.760] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:40.760] PARSE HP: Raw OCR text: '1425'
+[10:20:40.760] PARSE HP: Found bounded number: 1425
+[10:20:40.760] OCR HP: SUCCESS - Found valid value 1425
+[10:20:40.760] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:40.760] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:40.760] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:40.760] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:40.906] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:40.906] PARSE MANA: Raw OCR text: '1092'
+[10:20:40.906] PARSE MANA: Found bounded number: 1092
+[10:20:40.906] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:40.906] OCR MANA: OTSU method SUCCESS: 1092
+[10:20:40.980] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:40.981] PARSE MANA: Raw OCR text: '1092'
+[10:20:40.981] PARSE MANA: Found bounded number: 1092
+[10:20:40.981] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:40.981] OCR MANA: InvOTSU method SUCCESS: 1092
+[10:20:40.981] OCR MANA: Multiple valid results, returning most common: 1092
+[10:20:40.981] FALLBACK MANA: Normal OCR succeeded: 1092
+[10:20:40.981] OCR_RESULTS: HP: 1425, Mana: 1092
+[10:20:40.981] DECISION: Checking thresholds - HP: 1425, Mana: 1092
+[10:20:40.981] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:40.981] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:40.981] STABILITY: Updated stable HP reference to 1425
+[10:20:40.982] DECISION: Mana 1092 = 88.5% (Threshold<55.00000000000001%)
+[10:20:40.982] DECISION: Mana 88.5% is sufficient - no mana action
+[10:20:41.037] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:41.184] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:41.184] PARSE HP: Raw OCR text: '1425'
+[10:20:41.184] PARSE HP: Found bounded number: 1425
+[10:20:41.184] OCR HP: SUCCESS - Found valid value 1425
+[10:20:41.184] OCR HP: OTSU method SUCCESS: 1425
+[10:20:41.255] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:41.256] PARSE HP: Raw OCR text: '1425'
+[10:20:41.256] PARSE HP: Found bounded number: 1425
+[10:20:41.256] OCR HP: SUCCESS - Found valid value 1425
+[10:20:41.256] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:41.256] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:41.256] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:41.256] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:41.400] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:41.400] PARSE MANA: Raw OCR text: '1092'
+[10:20:41.400] PARSE MANA: Found bounded number: 1092
+[10:20:41.400] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:41.401] OCR MANA: OTSU method SUCCESS: 1092
+[10:20:41.472] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:41.472] PARSE MANA: Raw OCR text: '1092'
+[10:20:41.472] PARSE MANA: Found bounded number: 1092
+[10:20:41.472] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:41.472] OCR MANA: InvOTSU method SUCCESS: 1092
+[10:20:41.472] OCR MANA: Multiple valid results, returning most common: 1092
+[10:20:41.472] FALLBACK MANA: Normal OCR succeeded: 1092
+[10:20:41.472] OCR_RESULTS: HP: 1425, Mana: 1092
+[10:20:41.473] DECISION: Checking thresholds - HP: 1425, Mana: 1092
+[10:20:41.473] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:41.473] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:41.473] STABILITY: Updated stable HP reference to 1425
+[10:20:41.473] DECISION: Mana 1092 = 88.5% (Threshold<55.00000000000001%)
+[10:20:41.473] DECISION: Mana 88.5% is sufficient - no mana action
+[10:20:41.528] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:41.695] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:41.695] PARSE HP: Raw OCR text: '1425'
+[10:20:41.695] PARSE HP: Found bounded number: 1425
+[10:20:41.695] OCR HP: SUCCESS - Found valid value 1425
+[10:20:41.695] OCR HP: OTSU method SUCCESS: 1425
+[10:20:41.768] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:41.768] PARSE HP: Raw OCR text: '1425'
+[10:20:41.768] PARSE HP: Found bounded number: 1425
+[10:20:41.768] OCR HP: SUCCESS - Found valid value 1425
+[10:20:41.768] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:41.769] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:41.769] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:41.769] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:41.919] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:41.919] PARSE MANA: Raw OCR text: '1092'
+[10:20:41.920] PARSE MANA: Found bounded number: 1092
+[10:20:41.920] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:41.920] OCR MANA: OTSU method SUCCESS: 1092
+[10:20:41.991] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:41.992] PARSE MANA: Raw OCR text: '1092'
+[10:20:41.992] PARSE MANA: Found bounded number: 1092
+[10:20:41.992] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:41.992] OCR MANA: InvOTSU method SUCCESS: 1092
+[10:20:41.992] OCR MANA: Multiple valid results, returning most common: 1092
+[10:20:41.992] FALLBACK MANA: Normal OCR succeeded: 1092
+[10:20:41.992] OCR_RESULTS: HP: 1425, Mana: 1092
+[10:20:41.993] DECISION: Checking thresholds - HP: 1425, Mana: 1092
+[10:20:41.993] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:41.993] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:41.993] STABILITY: Updated stable HP reference to 1425
+[10:20:41.993] DECISION: Mana 1092 = 88.5% (Threshold<55.00000000000001%)
+[10:20:41.993] DECISION: Mana 88.5% is sufficient - no mana action
+[10:20:42.044] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:42.190] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:42.191] PARSE HP: Raw OCR text: '1425'
+[10:20:42.191] PARSE HP: Found bounded number: 1425
+[10:20:42.191] OCR HP: SUCCESS - Found valid value 1425
+[10:20:42.191] OCR HP: OTSU method SUCCESS: 1425
+[10:20:42.264] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:42.264] PARSE HP: Raw OCR text: '1425'
+[10:20:42.264] PARSE HP: Found bounded number: 1425
+[10:20:42.264] OCR HP: SUCCESS - Found valid value 1425
+[10:20:42.265] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:42.265] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:42.265] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:42.265] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:42.401] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:42.402] PARSE MANA: Raw OCR text: '1092'
+[10:20:42.402] PARSE MANA: Found bounded number: 1092
+[10:20:42.402] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:42.402] OCR MANA: OTSU method SUCCESS: 1092
+[10:20:42.475] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:42.476] PARSE MANA: Raw OCR text: '1092'
+[10:20:42.476] PARSE MANA: Found bounded number: 1092
+[10:20:42.476] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:42.476] OCR MANA: InvOTSU method SUCCESS: 1092
+[10:20:42.476] OCR MANA: Multiple valid results, returning most common: 1092
+[10:20:42.476] FALLBACK MANA: Normal OCR succeeded: 1092
+[10:20:42.476] OCR_RESULTS: HP: 1425, Mana: 1092
+[10:20:42.477] DECISION: Checking thresholds - HP: 1425, Mana: 1092
+[10:20:42.477] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:42.477] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:42.477] STABILITY: Updated stable HP reference to 1425
+[10:20:42.477] DECISION: Mana 1092 = 88.5% (Threshold<55.00000000000001%)
+[10:20:42.477] DECISION: Mana 88.5% is sufficient - no mana action
+[10:20:42.530] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:42.675] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:42.675] PARSE HP: Raw OCR text: '1425'
+[10:20:42.675] PARSE HP: Found bounded number: 1425
+[10:20:42.675] OCR HP: SUCCESS - Found valid value 1425
+[10:20:42.675] OCR HP: OTSU method SUCCESS: 1425
+[10:20:42.748] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:42.749] PARSE HP: Raw OCR text: '1425'
+[10:20:42.749] PARSE HP: Found bounded number: 1425
+[10:20:42.749] OCR HP: SUCCESS - Found valid value 1425
+[10:20:42.749] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:42.749] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:42.749] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:42.749] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:42.891] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:42.891] PARSE MANA: Raw OCR text: '1092'
+[10:20:42.891] PARSE MANA: Found bounded number: 1092
+[10:20:42.891] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:42.891] OCR MANA: OTSU method SUCCESS: 1092
+[10:20:42.963] OCR MANA: Scale 3, Config --psm: '1092'
+[10:20:42.963] PARSE MANA: Raw OCR text: '1092'
+[10:20:42.963] PARSE MANA: Found bounded number: 1092
+[10:20:42.963] OCR MANA: SUCCESS - Found valid value 1092
+[10:20:42.964] OCR MANA: InvOTSU method SUCCESS: 1092
+[10:20:42.964] OCR MANA: Multiple valid results, returning most common: 1092
+[10:20:42.964] FALLBACK MANA: Normal OCR succeeded: 1092
+[10:20:42.964] OCR_RESULTS: HP: 1425, Mana: 1092
+[10:20:42.964] DECISION: Checking thresholds - HP: 1425, Mana: 1092
+[10:20:42.964] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:42.964] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:42.964] STABILITY: Updated stable HP reference to 1425
+[10:20:42.964] DECISION: Mana 1092 = 88.5% (Threshold<55.00000000000001%)
+[10:20:42.964] DECISION: Mana 88.5% is sufficient - no mana action
+[10:20:43.019] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:43.165] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:43.166] PARSE HP: Raw OCR text: '1425'
+[10:20:43.166] PARSE HP: Found bounded number: 1425
+[10:20:43.166] OCR HP: SUCCESS - Found valid value 1425
+[10:20:43.166] OCR HP: OTSU method SUCCESS: 1425
+[10:20:43.243] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:43.243] PARSE HP: Raw OCR text: '1425'
+[10:20:43.243] PARSE HP: Found bounded number: 1425
+[10:20:43.243] OCR HP: SUCCESS - Found valid value 1425
+[10:20:43.243] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:43.243] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:43.244] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:43.244] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:43.388] OCR MANA: Scale 3, Config --psm: '1096'
+[10:20:43.389] PARSE MANA: Raw OCR text: '1096'
+[10:20:43.389] PARSE MANA: Found bounded number: 1096
+[10:20:43.389] OCR MANA: SUCCESS - Found valid value 1096
+[10:20:43.389] OCR MANA: OTSU method SUCCESS: 1096
+[10:20:43.464] OCR MANA: Scale 3, Config --psm: '1096'
+[10:20:43.464] PARSE MANA: Raw OCR text: '1096'
+[10:20:43.464] PARSE MANA: Found bounded number: 1096
+[10:20:43.464] OCR MANA: SUCCESS - Found valid value 1096
+[10:20:43.464] OCR MANA: InvOTSU method SUCCESS: 1096
+[10:20:43.464] OCR MANA: Multiple valid results, returning most common: 1096
+[10:20:43.464] FALLBACK MANA: Normal OCR succeeded: 1096
+[10:20:43.465] OCR_RESULTS: HP: 1425, Mana: 1096
+[10:20:43.465] DECISION: Checking thresholds - HP: 1425, Mana: 1096
+[10:20:43.465] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:43.465] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:43.465] STABILITY: Updated stable HP reference to 1425
+[10:20:43.465] DECISION: Mana 1096 = 88.8% (Threshold<55.00000000000001%)
+[10:20:43.465] DECISION: Mana 88.8% is sufficient - no mana action
+[10:20:43.516] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:43.676] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:43.677] PARSE HP: Raw OCR text: '1425'
+[10:20:43.677] PARSE HP: Found bounded number: 1425
+[10:20:43.677] OCR HP: SUCCESS - Found valid value 1425
+[10:20:43.677] OCR HP: OTSU method SUCCESS: 1425
+[10:20:43.753] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:43.753] PARSE HP: Raw OCR text: '1425'
+[10:20:43.753] PARSE HP: Found bounded number: 1425
+[10:20:43.753] OCR HP: SUCCESS - Found valid value 1425
+[10:20:43.753] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:43.753] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:43.753] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:43.753] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:43.897] OCR MANA: Scale 3, Config --psm: '1096'
+[10:20:43.897] PARSE MANA: Raw OCR text: '1096'
+[10:20:43.897] PARSE MANA: Found bounded number: 1096
+[10:20:43.897] OCR MANA: SUCCESS - Found valid value 1096
+[10:20:43.897] OCR MANA: OTSU method SUCCESS: 1096
+[10:20:43.968] OCR MANA: Scale 3, Config --psm: '1096'
+[10:20:43.968] PARSE MANA: Raw OCR text: '1096'
+[10:20:43.968] PARSE MANA: Found bounded number: 1096
+[10:20:43.968] OCR MANA: SUCCESS - Found valid value 1096
+[10:20:43.968] OCR MANA: InvOTSU method SUCCESS: 1096
+[10:20:43.968] OCR MANA: Multiple valid results, returning most common: 1096
+[10:20:43.969] FALLBACK MANA: Normal OCR succeeded: 1096
+[10:20:43.969] OCR_RESULTS: HP: 1425, Mana: 1096
+[10:20:43.969] DECISION: Checking thresholds - HP: 1425, Mana: 1096
+[10:20:43.969] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:43.969] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:43.969] STABILITY: Updated stable HP reference to 1425
+[10:20:43.969] DECISION: Mana 1096 = 88.8% (Threshold<55.00000000000001%)
+[10:20:43.969] DECISION: Mana 88.8% is sufficient - no mana action
+[10:20:44.023] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:44.232] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:44.232] PARSE HP: Raw OCR text: '1425'
+[10:20:44.232] PARSE HP: Found bounded number: 1425
+[10:20:44.232] OCR HP: SUCCESS - Found valid value 1425
+[10:20:44.232] OCR HP: OTSU method SUCCESS: 1425
+[10:20:44.310] OCR HP: Scale 3, Config --psm: '1425'
+[10:20:44.311] PARSE HP: Raw OCR text: '1425'
+[10:20:44.311] PARSE HP: Found bounded number: 1425
+[10:20:44.311] OCR HP: SUCCESS - Found valid value 1425
+[10:20:44.311] OCR HP: InvOTSU method SUCCESS: 1425
+[10:20:44.311] OCR HP: Multiple valid results, returning most common: 1425
+[10:20:44.311] FALLBACK HP: Normal OCR succeeded: 1425
+[10:20:44.311] OCR MANA: Starting extraction from region (-2183, 131, 212, 63)
+[10:20:44.457] OCR MANA: Scale 3, Config --psm: '1096'
+[10:20:44.458] PARSE MANA: Raw OCR text: '1096'
+[10:20:44.458] PARSE MANA: Found bounded number: 1096
+[10:20:44.458] OCR MANA: SUCCESS - Found valid value 1096
+[10:20:44.458] OCR MANA: OTSU method SUCCESS: 1096
+[10:20:44.530] OCR MANA: Scale 3, Config --psm: '1096'
+[10:20:44.530] PARSE MANA: Raw OCR text: '1096'
+[10:20:44.530] PARSE MANA: Found bounded number: 1096
+[10:20:44.530] OCR MANA: SUCCESS - Found valid value 1096
+[10:20:44.530] OCR MANA: InvOTSU method SUCCESS: 1096
+[10:20:44.530] OCR MANA: Multiple valid results, returning most common: 1096
+[10:20:44.530] FALLBACK MANA: Normal OCR succeeded: 1096
+[10:20:44.530] OCR_RESULTS: HP: 1425, Mana: 1096
+[10:20:44.530] DECISION: Checking thresholds - HP: 1425, Mana: 1096
+[10:20:44.531] DECISION: HP 1425 = 100.0% (Critical<55.00000000000001%, Moderate<83.0%)
+[10:20:44.531] DECISION: HP 100.0% is healthy - no healing needed
+[10:20:44.531] STABILITY: Updated stable HP reference to 1425
+[10:20:44.531] DECISION: Mana 1096 = 88.8% (Threshold<55.00000000000001%)
+[10:20:44.531] DECISION: Mana 88.8% is sufficient - no mana action
+[10:20:44.584] OCR HP: Starting extraction from region (-2188, 78, 227, 60)
+[10:20:44.661] === MONITORING STOPPED BY USER ===
+[10:20:44.661] === SESSION ENDED ===
+

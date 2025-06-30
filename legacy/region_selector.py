@@ -6,6 +6,7 @@ import time
 import sys
 from PIL import Image
 import re
+import os
 
 class RegionSelector:
     def __init__(self):
@@ -18,14 +19,14 @@ class RegionSelector:
         print("Press ENTER when ready...")
         input()
     def select_region_interactive(self, region_name):
-        print(f"\n=== Selecting {region_name} Region ===")
-        print("1. Position your mouse at the TOP-LEFT corner of the number")
+        print(f"\n📍 Selecting {region_name} region")
+        print("1. Position your mouse at the TOP-LEFT corner")
         self.wait_for_enter()
         
         x1, y1 = pyautogui.position()
         print(f"Top-left: ({x1}, {y1})")
         
-        print("2. Position your mouse at the BOTTOM-RIGHT corner of the number")
+        print("2. Position your mouse at the BOTTOM-RIGHT corner")
         self.wait_for_enter()
         
         x2, y2 = pyautogui.position()
@@ -53,8 +54,9 @@ class RegionSelector:
             img = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
             
             # Save original image for review
-            cv2.imwrite(f"{region_name}_original.png", img)
-            print(f"Saved {region_name}_original.png")
+            os.makedirs("debug/images", exist_ok=True)
+            cv2.imwrite(f"debug/images/{region_name}_original.png", img)
+            print(f"Saved debug/images/{region_name}_original.png")
             
             # Convert to grayscale
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -82,8 +84,8 @@ class RegionSelector:
                 cleaned = cv2.morphologyEx(cleaned, cv2.MORPH_OPEN, kernel)
                 cleaned = cv2.GaussianBlur(cleaned, (3, 3), 0)
                 
-                # Save processed image
-                cv2.imwrite(f"{region_name}_{method_name}.png", cleaned)
+                # Save processed image to debug folder
+                cv2.imwrite(f"debug/images/{region_name}_{method_name}.png", cleaned)
                 
                 # Try OCR
                 try:
