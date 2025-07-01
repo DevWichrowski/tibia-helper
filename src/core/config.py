@@ -7,7 +7,7 @@ class GameConfig:
         self.max_hp = self.DEFAULT_MAX_HP
         
         # Healing thresholds
-        self.hp_threshold = 0.75  # 75% - use F1 for moderate healing
+        self.hp_threshold = 0.78  # 78% - use F1 for moderate healing
         self.hp_critical_threshold = 0.55  # 55% - use F6 for critical healing
         
         # Key mappings
@@ -42,4 +42,4 @@ class GameConfig:
         return {
             'hp_critical': f"{self.hp_critical_threshold * 100}%",
             'hp_moderate': f"{self.hp_threshold * 100}%"
-        } 
+        }
