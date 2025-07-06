@@ -77,6 +77,18 @@ class GameHelper:
         # Check HP and heal if needed
         self.health_monitor.check_hp_and_heal(hp_value)
     
+    def display_healing_summary(self):
+        """Display healing usage summary"""
+        summary = self.health_monitor.get_healing_summary()
+        
+        print("\n" + "="*50)
+        print("🏥 HEALING SUMMARY")
+        print("="*50)
+        print(f"💊 Moderate heals used: {summary['moderate_heals']}")
+        print(f"🚨 Critical heals used:  {summary['critical_heals']}")
+        print(f"📊 Total heals used:     {summary['total_heals']}")
+        print("="*50)
+    
     def run_monitoring_loop(self):
         """Main monitoring loop"""
         print("\nStarting health monitoring... - ENHANCED OCR!")
@@ -112,6 +124,8 @@ class GameHelper:
             print(f"\nError: {e}")
             self.debug_logger.log_monitoring_stop(f"ERROR: {str(e)}")
         
+        # Display healing summary before exit
+        self.display_healing_summary()
         print("Health monitor stopped.")
     
     def run(self):

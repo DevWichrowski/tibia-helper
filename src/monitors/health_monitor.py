@@ -14,23 +14,30 @@ class HealthMonitor:
         # Failure tracking
         self.consecutive_failures = 0
         
+        # Healing usage counters
+        self.moderate_heal_count = 0
+        self.critical_heal_count = 0
+        
     def debug_log(self, message):
         """Write debug message through the logger"""
         if self.debug_logger:
             self.debug_logger.log(message)
     
-    def press_key_with_cooldown(self, key, last_press_time, action_type="ACTION"):
+    def press_key_with_cooldown(self, key, last_press_time, action_type="ACTION", cooldown=None):
         """Press a key with cooldown protection"""
         current_time = time.time()
         time_since_last = current_time - last_press_time
         
-        if time_since_last >= self.config.cooldown:
+        # Use provided cooldown or default to regular cooldown
+        effective_cooldown = cooldown if cooldown is not None else self.config.cooldown
+        
+        if time_since_last >= effective_cooldown:
             pyautogui.press(key)
-            self.debug_log(f"KEY_PRESS: {key.upper()} pressed for {action_type} (cooldown: {time_since_last:.3f}s)")
+            self.debug_log(f"KEY_PRESS: {key.upper()} pressed for {action_type} (cooldown: {time_since_last:.3f}s, required: {effective_cooldown:.3f}s)")
             print(f"\n🚨 {action_type}: {key.upper()} pressed at {time.strftime('%H:%M:%S')}", flush=True)
             return current_time
         else:
-            self.debug_log(f"KEY_BLOCKED: {key.upper()} blocked for {action_type} (cooldown remaining: {self.config.cooldown - time_since_last:.3f}s)")
+            self.debug_log(f"KEY_BLOCKED: {key.upper()} blocked for {action_type} (cooldown remaining: {effective_cooldown - time_since_last:.3f}s)")
             return last_press_time
     
     def check_hp_and_heal(self, hp_value):
@@ -56,27 +63,36 @@ class HealthMonitor:
         self.debug_log(f"DECISION: HP {hp_value} = {hp_percentage*100:.1f}% (Critical<{self.config.hp_critical_threshold*100}%, Moderate<{self.config.hp_threshold*100}%)")
         
         # ==========================================
-        # STEP 1: CRITICAL HEALING - IMMEDIATE!
+        # STEP 1: CRITICAL HEALING - FIRST PRIORITY!
         # ==========================================
         if hp_percentage < self.config.hp_critical_threshold:
-            self.debug_log(f"🚨 CRITICAL ALERT: HP {hp_percentage*100:.1f}% < {self.config.hp_critical_threshold*100}% - IMMEDIATE CRITICAL HEALING!")
+            self.debug_log(f"🚨 CRITICAL ALERT: HP {hp_percentage*100:.1f}% < {self.config.hp_critical_threshold*100}% - CRITICAL HEALING!")
+            old_time = self.last_critical_heal_press
             self.last_critical_heal_press = self.press_key_with_cooldown(
                 self.config.critical_heal_key, 
                 self.last_critical_heal_press, 
-                "🚨 CRITICAL HEAL"
+                "🚨 CRITICAL HEAL",
+                cooldown=self.config.critical_cooldown
             )
-            return hp_percentage  # CRITICAL HEALING EXECUTED - EXIT IMMEDIATELY
+            # Increment counter only if key was actually pressed
+            if self.last_critical_heal_press > old_time:
+                self.critical_heal_count += 1
         
         # ==========================================
-        # STEP 2: MODERATE HEALING - ONLY IF NOT CRITICAL
+        # STEP 2: MODERATE HEALING - SECOND PRIORITY
         # ==========================================
         elif hp_percentage < self.config.hp_threshold:
             self.debug_log(f"DECISION: HP {hp_percentage*100:.1f}% needs moderate healing")
+            old_time = self.last_heal_press
             self.last_heal_press = self.press_key_with_cooldown(
                 self.config.heal_key, 
                 self.last_heal_press, 
-                "MODERATE HEAL"
+                "MODERATE HEAL",
+                cooldown=self.config.critical_cooldown
             )
+            # Increment counter only if key was actually pressed
+            if self.last_heal_press > old_time:
+                self.moderate_heal_count += 1
         
         # ==========================================
         # STEP 3: HEALTHY - NO HEALING NEEDED
@@ -99,4 +115,12 @@ class HealthMonitor:
             'value': hp_value,
             'percentage': hp_percent,
             'status': status
+        }
+    
+    def get_healing_summary(self):
+        """Get healing usage summary"""
+        return {
+            'moderate_heals': self.moderate_heal_count,
+            'critical_heals': self.critical_heal_count,
+            'total_heals': self.moderate_heal_count + self.critical_heal_count
         } 
