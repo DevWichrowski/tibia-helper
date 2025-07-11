@@ -66,7 +66,7 @@ class OCRProcessor:
         # Pattern 4: Any digits (last resort - take the largest)
         all_numbers = re.findall(r'\d+', text)
         if all_numbers:
-            numbers = [int(num) for num in all_numbers if 100 <= int(num) <= 3000]
+            numbers = [int(num) for num in all_numbers if 100 <= int(num) <= self.config.max_hp]
             if numbers:
                 result = max(numbers)
                 self.debug_log(f"PARSE {value_type.upper()}: Found largest valid number: {result}")
@@ -122,7 +122,7 @@ class OCRProcessor:
             
             if all_results:
                 if value_type == "hp":
-                    valid_results = [r for r in all_results if 100 <= r <= 9999]
+                    valid_results = [r for r in all_results if 100 <= r <= self.config.max_hp]
                     if valid_results:
                         counts = Counter(valid_results)
                         final_result = counts.most_common(1)[0][0]
@@ -178,7 +178,7 @@ class OCRProcessor:
                             self.debug_log(f"OCR {value_type.upper()}: Scale {scale_factor}, Config {config.split()[0]}: '{text}'")
                             
                             parsed_value = self.parse_health_value(text, value_type)
-                            if parsed_value and 100 <= parsed_value <= 3000:
+                            if parsed_value and 100 <= parsed_value <= self.config.max_hp:
                                 self.debug_log(f"OCR {value_type.upper()}: SUCCESS - Found valid value {parsed_value}")
                                 return parsed_value
                     except Exception as e:
@@ -188,7 +188,7 @@ class OCRProcessor:
             self.debug_log(f"OCR {value_type.upper()}: Trying to parse from all texts: {all_texts}")
             for text in all_texts:
                 parsed_value = self.parse_health_value(text, value_type)
-                if parsed_value and 100 <= parsed_value <= 3000:
+                if parsed_value and 100 <= parsed_value <= self.config.max_hp:
                     self.debug_log(f"OCR {value_type.upper()}: FALLBACK SUCCESS - Found valid value {parsed_value}")
                     return parsed_value
                     

@@ -1,7 +1,7 @@
 class GameConfig:
     def __init__(self):
         # Default game values
-        self.DEFAULT_MAX_HP = 1425
+        self.DEFAULT_MAX_HP = 4015
         
         # Current game values (can be overridden)
         self.max_hp = self.DEFAULT_MAX_HP
