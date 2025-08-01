@@ -1,7 +1,7 @@
 class GameConfig:
     def __init__(self):
         # Default game values
-        self.DEFAULT_MAX_HP = 4015
+        self.DEFAULT_MAX_HP = 5630
         
         # Current game values (can be overridden)
         self.max_hp = self.DEFAULT_MAX_HP
@@ -12,7 +12,7 @@ class GameConfig:
         
         # Key mappings
         self.heal_key = 'f1'  # Moderate healing
-        self.critical_heal_key = 'f6'  # Critical healing
+        self.critical_heal_key = 'f2'  # Critical healing
         
         # Timing settings - CRITICAL PRIORITY SYSTEM
         self.cooldown = 0.1  # Seconds between moderate healing key presses
