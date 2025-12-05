@@ -1,0 +1,28 @@
+{
+    "max_hp": 1067,
+    "healing": {
+        "hp_threshold": 0.75,
+        "hp_critical_threshold": 0.55,
+        "heal_key": "f1",
+        "critical_heal_key": "f2",
+        "cooldown": 0.2
+    },
+    "skinner": {
+        "enabled_on_start": false,
+        "hotkey": "f3",
+        "min_delay": 0.2,
+        "max_delay": 0.4
+    },
+    "hotkeys": {
+        "toggle_bot": "f9",
+        "toggle_skinner": "f10"
+    },
+    "overlay": {
+        "enabled": true,
+        "opacity": 0.9
+    },
+    "debug": {
+        "enabled": true,
+        "log_file": "debug/logs/game_helper_debug.log"
+    }
+}

@@ -125,4 +125,12 @@ class HealthMonitor:
             'moderate_heals': self.moderate_heal_count,
             'critical_heals': self.critical_heal_count,
             'total_heals': self.moderate_heal_count + self.critical_heal_count
-        } 
+        }
+    
+    def get_error_status(self):
+        """Get current error status for overlay"""
+        return {
+            'consecutive_failures': self.consecutive_failures,
+            'has_error': self.consecutive_failures >= 3,  # 3+ failures = error
+            'is_warning': self.consecutive_failures >= self.config.max_failures_warning
+        }

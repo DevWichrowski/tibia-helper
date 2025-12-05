@@ -8,6 +8,7 @@ from .hotkey_manager import HotkeyManager
 from ..processing.ocr_processor import OCRProcessor
 from ..processing.region_manager import RegionManager
 from ..monitors.health_monitor import HealthMonitor
+from ..monitors.skinner import Skinner
 from ..ui.overlay import GameOverlay
 
 
@@ -28,12 +29,19 @@ class GameHelper:
         # Initialize health monitor
         self.health_monitor = HealthMonitor(self.config, self.debug_logger)
         
+        # Initialize skinner
+        self.skinner = Skinner(self.config, self.debug_logger)
+        
         # Control flags
         self.running = True
         self.paused = False  # Bot paused state (toggled by F9)
         
-        # Initialize hotkey manager
-        self.hotkey_manager = HotkeyManager(self.config, self._on_toggle)
+        # Initialize hotkey manager with F9 and F10 callbacks
+        self.hotkey_manager = HotkeyManager(
+            self.config, 
+            self._on_toggle,
+            self._on_skinner_toggle
+        )
         
         # Initialize overlay (will be started later)
         self.overlay = None
@@ -48,6 +56,10 @@ class GameHelper:
         status = "ZATRZYMANY" if self.paused else "AKTYWNY"
         print(f"\n🎮 Bot {status} (F9)")
         self.debug_logger.log(f"TOGGLE: Bot state changed to {'PAUSED' if self.paused else 'ACTIVE'}")
+    
+    def _on_skinner_toggle(self):
+        """Callback when F10 is pressed to toggle skinner"""
+        self.skinner.toggle()
     
     def _get_paused_state(self):
         """Get current paused state (for overlay)"""
@@ -155,8 +167,9 @@ class GameHelper:
         regions = self.region_manager.get_regions()
         self.debug_logger.log_monitoring_start(regions)
         
-        # Start hotkey listener
+        # Start hotkey listener and skinner
         self.hotkey_manager.start()
+        self.skinner.start()
         
         try:
             if self.config.overlay_enabled:
@@ -164,7 +177,8 @@ class GameHelper:
                 self.overlay = GameOverlay(
                     self.config, 
                     self.health_monitor, 
-                    self._get_paused_state
+                    self._get_paused_state,
+                    self.skinner
                 )
                 # This blocks until overlay is closed
                 self.overlay.run_with_monitoring(self._monitoring_cycle)
@@ -179,39 +193,29 @@ class GameHelper:
         finally:
             self.running = False
             self.hotkey_manager.stop()
+            self.skinner.stop()
         
         # Display healing summary before exit
         self.display_healing_summary()
         print("Health monitor stopped.")
     
     def run(self):
-        """Main entry point"""
+        """Main entry point - auto-starts using config.json values"""
         print("=== Health Monitor ===")
-        print("This tool monitors your game's HP values and automatically presses healing hotkeys.")
-        print()
-        
-        # Try to load saved regions first
-        if self.region_manager.load_saved_regions():
-            # Setup game values
-            max_hp = self.setup_game_values()
-            self.display_configuration()
-            
-            # Show regions being used
-            regions = self.region_manager.get_regions()
-            print(f"📍 Using saved region: HP{regions['hp']}")
-            
-            input("\nPress Enter to start monitoring...")
-            self.run_monitoring_loop()
-            return
-        
-        # Manual setup if no saved regions
-        max_hp = self.setup_game_values()
+        print(f"Max HP: {self.config.max_hp}")
         self.display_configuration()
         
-        # Setup regions interactively
-        self.region_manager.setup_regions()
+        # Try to load saved regions
+        if not self.region_manager.load_saved_regions():
+            print("⚠️  No saved regions found. Run from terminal first to set up regions.")
+            print("   python3 main.py")
+            return
         
-        input("\nPress Enter to start monitoring...")
+        # Show regions being used
+        regions = self.region_manager.get_regions()
+        print(f"📍 Using saved region: HP{regions['hp']}")
+        
+        # Start monitoring immediately
         self.run_monitoring_loop()
 
 
@@ -223,4 +227,3 @@ def main():
 
 if __name__ == "__main__":
     main()
- 
