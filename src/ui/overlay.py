@@ -40,199 +40,241 @@ class GameOverlay:
         self.skinner_clicks_label = None
         self.haste_btn = None
         self.haste_casts_label = None
+        self.heal_btn = None
         self.normal_heals_label = None
+        self.critical_btn = None
         self.critical_heals_label = None
     
     def _create_window(self):
-        """Create the overlay window"""
+        """Create the overlay window - Tibia style"""
         self.root = tk.Tk()
-        self.root.title("Healer Panel")
+        self.root.title("Healer")
+        
+        # Tibia color scheme
+        BG_DARK = '#404040'
+        BG_DARKER = '#353535'
+        BG_TITLE = '#505050'
+        BORDER = '#606060'
+        TEXT_BEIGE = '#c0b090'
+        TEXT_DIM = '#707070'
+        GREEN = '#00c000'
+        RED = '#c00000'
+        ORANGE = '#ff8800'
+        BLUE = '#4080ff'
+        GOLD = '#d4a017'
         
         # Window configuration
         self.root.overrideredirect(True)
         self.root.attributes('-topmost', True)
-        self.root.attributes('-alpha', 0.9)
+        self.root.attributes('-alpha', 0.95)
         
-        # Position window in top-right corner
         screen_width = self.root.winfo_screenwidth()
-        self.root.geometry(f"+{screen_width - 280}+50")
+        self.root.geometry(f"+{screen_width - 230}+100")
         
-        # Main frame with game-style border
-        main_frame = tk.Frame(
-            self.root,
-            bg='#1a1a2e',
-            highlightbackground='#c9a227',
-            highlightthickness=2,
-            padx=12,
-            pady=8
-        )
+        # Outer border
+        outer_frame = tk.Frame(self.root, bg=BORDER, padx=1, pady=1)
+        outer_frame.pack(fill='both', expand=True)
+        
+        main_frame = tk.Frame(outer_frame, bg=BG_DARK)
         main_frame.pack(fill='both', expand=True)
         
-        # Enable dragging
-        main_frame.bind('<Button-1>', self._start_drag)
-        main_frame.bind('<B1-Motion>', self._on_drag)
+        # === Title Bar ===
+        title_frame = tk.Frame(main_frame, bg=BG_TITLE, height=20)
+        title_frame.pack(fill='x')
+        title_frame.pack_propagate(False)
         
-        # Title
-        title_label = tk.Label(
-            main_frame,
-            text="🛡️ HEALER PANEL",
-            font=('Helvetica', 13, 'bold'),
-            fg='#c9a227',
-            bg='#1a1a2e'
-        )
-        title_label.pack(pady=(0, 5))
+        tk.Label(title_frame, text="🛡️", font=('Arial', 10),
+                 fg=GOLD, bg=BG_TITLE).pack(side='left', padx=(4, 2))
+        
+        title_label = tk.Label(title_frame, text="Healer Bot",
+                               font=('Arial', 9, 'bold'), fg=TEXT_BEIGE, bg=BG_TITLE)
+        title_label.pack(side='left')
+        
+        close_btn = tk.Label(title_frame, text="✕", font=('Arial', 10),
+                             fg=TEXT_DIM, bg=BG_TITLE, cursor='hand2')
+        close_btn.pack(side='right', padx=(0, 4))
+        close_btn.bind('<Button-1>', lambda e: self._on_close())
+        close_btn.bind('<Enter>', lambda e: close_btn.config(fg=RED))
+        close_btn.bind('<Leave>', lambda e: close_btn.config(fg=TEXT_DIM))
+        
+        title_frame.bind('<Button-1>', self._start_drag)
+        title_frame.bind('<B1-Motion>', self._on_drag)
         title_label.bind('<Button-1>', self._start_drag)
         title_label.bind('<B1-Motion>', self._on_drag)
         
-        # Separator
-        tk.Frame(main_frame, height=2, bg='#c9a227').pack(fill='x', pady=3)
+        # === Content ===
+        content = tk.Frame(main_frame, bg=BG_DARK, padx=24, pady=6)
+        content.pack(fill='both', expand=True)
         
-        # Bot Status
-        status_frame = tk.Frame(main_frame, bg='#1a1a2e')
-        status_frame.pack(fill='x', pady=2)
+        # --- Status Row ---
+        status_row = tk.Frame(content, bg=BG_DARK)
+        status_row.pack(fill='x', pady=2)
         
-        tk.Label(
-            status_frame, text="Bot:", font=('Helvetica', 10),
-            fg='#a0a0a0', bg='#1a1a2e'
-        ).pack(side='left')
+        tk.Label(status_row, text="⚡ Status:", font=('Arial', 9),
+                 fg=TEXT_BEIGE, bg=BG_DARK).pack(side='left')
         
-        self.status_indicator = tk.Label(
-            status_frame, text="● AKTYWNY", font=('Helvetica', 10, 'bold'),
-            fg='#00ff88', bg='#1a1a2e'
-        )
-        self.status_indicator.pack(side='left', padx=(5, 0))
+        self.status_indicator = tk.Label(status_row, text="ACTIVE",
+                                         font=('Arial', 9, 'bold'), fg=GREEN, bg=BG_DARK)
+        self.status_indicator.pack(side='right')
         
-        # Skinner toggle button
+        # --- Separator ---
+        tk.Frame(content, height=1, bg=BORDER).pack(fill='x', pady=4)
+        
+        # ========== FEATURES SECTION ==========
+        feat_title = tk.Frame(content, bg=BG_DARKER, padx=4, pady=2)
+        feat_title.pack(fill='x', pady=(0, 3))
+        tk.Label(feat_title, text="⚙️ Features", font=('Arial', 8, 'bold'),
+                 fg=GOLD, bg=BG_DARKER).pack(side='left')
+        
+        # Heal toggle with %
+        heal_row = tk.Frame(content, bg=BG_DARK)
+        heal_row.pack(fill='x', pady=1)
+        
+        tk.Label(heal_row, text=f"  💊 Heal (<{int(self.config.hp_threshold*100)}%):",
+                 font=('Arial', 9), fg=TEXT_BEIGE, bg=BG_DARK).pack(side='left')
+        
+        self.heal_btn = tk.Label(heal_row, text="[ON]", font=('Arial', 9, 'bold'),
+                                 fg=GREEN, bg=BG_DARK, cursor='hand2')
+        self.heal_btn.pack(side='right')
+        self.heal_btn.bind('<Button-1>', lambda e: self._toggle_heal())
+        
+        # Critical toggle with %
+        crit_row = tk.Frame(content, bg=BG_DARK)
+        crit_row.pack(fill='x', pady=1)
+        
+        tk.Label(crit_row, text=f"  🚨 Critical (<{int(self.config.hp_critical_threshold*100)}%):",
+                 font=('Arial', 9), fg=TEXT_BEIGE, bg=BG_DARK).pack(side='left')
+        
+        self.critical_btn = tk.Label(crit_row, text="[ON]", font=('Arial', 9, 'bold'),
+                                     fg=GREEN, bg=BG_DARK, cursor='hand2')
+        self.critical_btn.pack(side='right')
+        self.critical_btn.bind('<Button-1>', lambda e: self._toggle_critical())
+        
+        # Skinner toggle (only button, no counter)
         if self.skinner:
-            skinner_frame = tk.Frame(main_frame, bg='#1a1a2e')
-            skinner_frame.pack(fill='x', pady=2)
+            skin_row = tk.Frame(content, bg=BG_DARK)
+            skin_row.pack(fill='x', pady=1)
             
-            tk.Label(
-                skinner_frame, text="🔪 Skinner:", font=('Helvetica', 10),
-                fg='#a0a0a0', bg='#1a1a2e'
-            ).pack(side='left')
+            tk.Label(skin_row, text="  🔪 Skinner:", font=('Arial', 9),
+                     fg=TEXT_BEIGE, bg=BG_DARK).pack(side='left')
             
-            self.skinner_btn = tk.Button(
-                skinner_frame,
-                text="OFF",
-                font=('Helvetica', 9, 'bold'),
-                fg='#ffffff',
-                bg='#8b0000',
-                activebackground='#a52a2a',
-                relief='flat',
-                padx=8,
-                pady=1,
-                cursor='hand2',
-                command=self._toggle_skinner
-            )
-            self.skinner_btn.pack(side='left', padx=(5, 0))
-            
-            self.skinner_clicks_label = tk.Label(
-                skinner_frame, text="(0)", font=('Helvetica', 9),
-                fg='#ffaa00', bg='#1a1a2e'
-            )
-            self.skinner_clicks_label.pack(side='left', padx=(5, 0))
+            self.skinner_btn = tk.Label(skin_row, text="[OFF]", font=('Arial', 9, 'bold'),
+                                        fg=RED, bg=BG_DARK, cursor='hand2')
+            self.skinner_btn.pack(side='right')
+            self.skinner_btn.bind('<Button-1>', lambda e: self._toggle_skinner())
         
-        # Auto-Haste toggle button
+        # Haste toggle (only button, no counter)
         if self.auto_haste:
-            haste_frame = tk.Frame(main_frame, bg='#1a1a2e')
-            haste_frame.pack(fill='x', pady=2)
+            haste_row = tk.Frame(content, bg=BG_DARK)
+            haste_row.pack(fill='x', pady=1)
             
-            tk.Label(
-                haste_frame, text="⚡ Haste:", font=('Helvetica', 10),
-                fg='#a0a0a0', bg='#1a1a2e'
-            ).pack(side='left')
+            tk.Label(haste_row, text="  💨 Haste:", font=('Arial', 9),
+                     fg=TEXT_BEIGE, bg=BG_DARK).pack(side='left')
             
-            self.haste_btn = tk.Button(
-                haste_frame,
-                text="OFF",
-                font=('Helvetica', 9, 'bold'),
-                fg='#ffffff',
-                bg='#8b0000',
-                activebackground='#a52a2a',
-                relief='flat',
-                padx=8,
-                pady=1,
-                cursor='hand2',
-                command=self._toggle_haste
-            )
-            self.haste_btn.pack(side='left', padx=(5, 0))
-            
-            self.haste_casts_label = tk.Label(
-                haste_frame, text="(0)", font=('Helvetica', 9),
-                fg='#00aaff', bg='#1a1a2e'
-            )
-            self.haste_casts_label.pack(side='left', padx=(5, 0))
+            self.haste_btn = tk.Label(haste_row, text="[OFF]", font=('Arial', 9, 'bold'),
+                                      fg=RED, bg=BG_DARK, cursor='hand2')
+            self.haste_btn.pack(side='right')
+            self.haste_btn.bind('<Button-1>', lambda e: self._toggle_haste())
         
-        # Separator
-        tk.Frame(main_frame, height=1, bg='#444').pack(fill='x', pady=4)
+        # --- Separator ---
+        tk.Frame(content, height=1, bg=BORDER).pack(fill='x', pady=4)
         
-        # HP Thresholds (compact)
-        thresh_frame = tk.Frame(main_frame, bg='#1a1a2e')
-        thresh_frame.pack(fill='x', pady=1)
+        # ========== STATISTICS SECTION ==========
+        stats_title = tk.Frame(content, bg=BG_DARKER, padx=4, pady=2)
+        stats_title.pack(fill='x', pady=(0, 3))
+        tk.Label(stats_title, text="📊 Statistics", font=('Arial', 8, 'bold'),
+                 fg=GOLD, bg=BG_DARKER).pack(side='left')
         
-        tk.Label(
-            thresh_frame, text=f"HP: {int(self.config.hp_threshold * 100)}%",
-            font=('Helvetica', 9), fg='#4da6ff', bg='#1a1a2e'
-        ).pack(side='left')
+        # Heals count
+        heals_row = tk.Frame(content, bg=BG_DARK)
+        heals_row.pack(fill='x', pady=1)
         
-        tk.Label(
-            thresh_frame, text=f"  Crit: {int(self.config.hp_critical_threshold * 100)}%",
-            font=('Helvetica', 9), fg='#ff6b6b', bg='#1a1a2e'
-        ).pack(side='left')
+        tk.Label(heals_row, text="  💊 Heals:", font=('Arial', 9),
+                 fg=TEXT_BEIGE, bg=BG_DARK).pack(side='left')
         
-        # Separator
-        tk.Frame(main_frame, height=1, bg='#444').pack(fill='x', pady=4)
-        
-        # Stats section
-        tk.Label(
-            main_frame, text="STATISTICS", font=('Helvetica', 9, 'bold'),
-            fg='#c9a227', bg='#1a1a2e'
-        ).pack(pady=(0, 3))
-        
-        # Normal heals
-        normal_frame = tk.Frame(main_frame, bg='#1a1a2e')
-        normal_frame.pack(fill='x', pady=1)
-        
-        tk.Label(
-            normal_frame, text="💊 Heals:", font=('Helvetica', 9),
-            fg='#a0a0a0', bg='#1a1a2e'
-        ).pack(side='left')
-        
-        self.normal_heals_label = tk.Label(
-            normal_frame, text="0", font=('Helvetica', 9, 'bold'),
-            fg='#00ff88', bg='#1a1a2e'
-        )
+        self.normal_heals_label = tk.Label(heals_row, text="0",
+                                           font=('Arial', 9, 'bold'), fg=GREEN, bg=BG_DARK)
         self.normal_heals_label.pack(side='right')
         
-        # Critical heals
-        critical_frame = tk.Frame(main_frame, bg='#1a1a2e')
-        critical_frame.pack(fill='x', pady=1)
+        # Critical count
+        crit_count_row = tk.Frame(content, bg=BG_DARK)
+        crit_count_row.pack(fill='x', pady=1)
         
-        tk.Label(
-            critical_frame, text="🚨 Critical:", font=('Helvetica', 9),
-            fg='#a0a0a0', bg='#1a1a2e'
-        ).pack(side='left')
+        tk.Label(crit_count_row, text="  🚨 Critical:", font=('Arial', 9),
+                 fg=TEXT_BEIGE, bg=BG_DARK).pack(side='left')
         
-        self.critical_heals_label = tk.Label(
-            critical_frame, text="0", font=('Helvetica', 9, 'bold'),
-            fg='#ff6b6b', bg='#1a1a2e'
-        )
+        self.critical_heals_label = tk.Label(crit_count_row, text="0",
+                                             font=('Arial', 9, 'bold'), fg=RED, bg=BG_DARK)
         self.critical_heals_label.pack(side='right')
         
-        # Separator
-        tk.Frame(main_frame, height=1, bg='#444').pack(fill='x', pady=4)
+        # Skinner count
+        if self.skinner:
+            skin_stats_row = tk.Frame(content, bg=BG_DARK)
+            skin_stats_row.pack(fill='x', pady=1)
+            
+            tk.Label(skin_stats_row, text="  🔪 Skins:", font=('Arial', 9),
+                     fg=TEXT_BEIGE, bg=BG_DARK).pack(side='left')
+            
+            self.skinner_clicks_label = tk.Label(skin_stats_row, text="0",
+                                                 font=('Arial', 9, 'bold'), fg=ORANGE, bg=BG_DARK)
+            self.skinner_clicks_label.pack(side='right')
         
-        # Hotkeys section (compact)
-        hotkeys_frame = tk.Frame(main_frame, bg='#1a1a2e')
-        hotkeys_frame.pack(fill='x', pady=1)
+        # Haste count
+        if self.auto_haste:
+            haste_stats_row = tk.Frame(content, bg=BG_DARK)
+            haste_stats_row.pack(fill='x', pady=1)
+            
+            tk.Label(haste_stats_row, text="  💨 Hastes:", font=('Arial', 9),
+                     fg=TEXT_BEIGE, bg=BG_DARK).pack(side='left')
+            
+            self.haste_casts_label = tk.Label(haste_stats_row, text="0",
+                                              font=('Arial', 9, 'bold'), fg=BLUE, bg=BG_DARK)
+            self.haste_casts_label.pack(side='right')
         
-        hotkey_text = f"F9:bot  {self.config.heal_key.upper()}:heal  {self.config.critical_heal_key.upper()}:crit"
+        # --- Separator ---
+        tk.Frame(content, height=1, bg=BORDER).pack(fill='x', pady=4)
         
-        tk.Label(
-            hotkeys_frame, text=hotkey_text,
-            font=('Helvetica', 8), fg='#666666', bg='#1a1a2e'
-        ).pack()
+        # ========== HOTKEYS SECTION ==========
+        hk_title = tk.Frame(content, bg=BG_DARKER, padx=4, pady=2)
+        hk_title.pack(fill='x', pady=(0, 3))
+        tk.Label(hk_title, text="⌨️ Hotkeys", font=('Arial', 8, 'bold'),
+                 fg=GOLD, bg=BG_DARKER).pack(side='left')
+        
+        # Row 1: F9 Bot | Heal key
+        hk1 = tk.Frame(content, bg=BG_DARK)
+        hk1.pack(fill='x', pady=1)
+        
+        left1 = tk.Frame(hk1, bg=BG_DARK)
+        left1.pack(side='left')
+        tk.Label(left1, text="  F9", font=('Arial', 8, 'bold'),
+                 fg=ORANGE, bg=BG_DARK).pack(side='left')
+        tk.Label(left1, text=" Bot", font=('Arial', 8),
+                 fg=TEXT_DIM, bg=BG_DARK).pack(side='left')
+        
+        right1 = tk.Frame(hk1, bg=BG_DARK)
+        right1.pack(side='right')
+        tk.Label(right1, text=f"{self.config.heal_key.upper()}", font=('Arial', 8, 'bold'),
+                 fg=GREEN, bg=BG_DARK).pack(side='left')
+        tk.Label(right1, text=" Heal", font=('Arial', 8),
+                 fg=TEXT_DIM, bg=BG_DARK).pack(side='left')
+        
+        # Row 2: Crit key | Haste key
+        hk2 = tk.Frame(content, bg=BG_DARK)
+        hk2.pack(fill='x', pady=1)
+        
+        left2 = tk.Frame(hk2, bg=BG_DARK)
+        left2.pack(side='left')
+        tk.Label(left2, text=f"  {self.config.critical_heal_key.upper()}", font=('Arial', 8, 'bold'),
+                 fg=RED, bg=BG_DARK).pack(side='left')
+        tk.Label(left2, text=" Crit", font=('Arial', 8),
+                 fg=TEXT_DIM, bg=BG_DARK).pack(side='left')
+        
+        right2 = tk.Frame(hk2, bg=BG_DARK)
+        right2.pack(side='right')
+        tk.Label(right2, text=f"{self.config.haste_hotkey.upper()}", font=('Arial', 8, 'bold'),
+                 fg=BLUE, bg=BG_DARK).pack(side='left')
+        tk.Label(right2, text=" Haste", font=('Arial', 8),
+                 fg=TEXT_DIM, bg=BG_DARK).pack(side='left')
         
         # Handle window close
         self.root.protocol("WM_DELETE_WINDOW", self._on_close)
@@ -249,21 +291,47 @@ class GameOverlay:
             self.auto_haste.toggle()
             self._update_haste_btn()
     
+    def _toggle_heal(self):
+        """Toggle normal heal on/off"""
+        self.health_monitor.toggle_heal()
+        self._update_heal_btn()
+    
+    def _toggle_critical(self):
+        """Toggle critical heal on/off"""
+        self.health_monitor.toggle_critical()
+        self._update_critical_btn()
+    
     def _update_skinner_btn(self):
         """Update skinner button appearance"""
         if self.skinner and self.skinner_btn:
             if self.skinner.is_enabled():
-                self.skinner_btn.config(text="ON", bg='#006400', activebackground='#228b22')
+                self.skinner_btn.config(text="[ON]", fg='#00c000')
             else:
-                self.skinner_btn.config(text="OFF", bg='#8b0000', activebackground='#a52a2a')
+                self.skinner_btn.config(text="[OFF]", fg='#c00000')
     
     def _update_haste_btn(self):
         """Update haste button appearance"""
         if self.auto_haste and self.haste_btn:
             if self.auto_haste.is_enabled():
-                self.haste_btn.config(text="ON", bg='#006400', activebackground='#228b22')
+                self.haste_btn.config(text="[ON]", fg='#00c000')
             else:
-                self.haste_btn.config(text="OFF", bg='#8b0000', activebackground='#a52a2a')
+                self.haste_btn.config(text="[OFF]", fg='#c00000')
+    
+    def _update_heal_btn(self):
+        """Update heal button appearance"""
+        if self.heal_btn:
+            if self.health_monitor.heal_enabled:
+                self.heal_btn.config(text="[ON]", fg='#00c000')
+            else:
+                self.heal_btn.config(text="[OFF]", fg='#c00000')
+    
+    def _update_critical_btn(self):
+        """Update critical button appearance"""
+        if self.critical_btn:
+            if self.health_monitor.critical_enabled:
+                self.critical_btn.config(text="[ON]", fg='#00c000')
+            else:
+                self.critical_btn.config(text="[OFF]", fg='#c00000')
     
     def _start_drag(self, event):
         self._drag_start_x = event.x
@@ -289,25 +357,25 @@ class GameOverlay:
             error_status = self.health_monitor.get_error_status()
             
             if error_status['is_warning']:
-                self.status_indicator.config(text="● BŁĄD OCR", fg='#ff0000')
+                self.status_indicator.config(text="ERROR", fg='#ff0000')
             elif error_status['has_error']:
-                self.status_indicator.config(text="● WYKRYWANIE...", fg='#ffaa00')
+                self.status_indicator.config(text="DETECT...", fg='#ff8800')
             elif is_paused:
-                self.status_indicator.config(text="● STOP", fg='#ff6b6b')
+                self.status_indicator.config(text="PAUSED", fg='#c00000')
             else:
-                self.status_indicator.config(text="● AKTYWNY", fg='#00ff88')
+                self.status_indicator.config(text="ACTIVE", fg='#00c000')
             
             # Update skinner
             if self.skinner:
                 self._update_skinner_btn()
                 stats = self.skinner.get_stats()
-                self.skinner_clicks_label.config(text=f"({stats['click_count']})")
+                self.skinner_clicks_label.config(text=str(stats['click_count']))
             
             # Update auto-haste
             if self.auto_haste:
                 self._update_haste_btn()
                 stats = self.auto_haste.get_stats()
-                self.haste_casts_label.config(text=f"({stats['cast_count']})")
+                self.haste_casts_label.config(text=str(stats['cast_count']))
             
             # Update heal counters
             summary = self.health_monitor.get_healing_summary()
