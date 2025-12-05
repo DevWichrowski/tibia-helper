@@ -30,6 +30,13 @@ class GameConfig:
         # PyAutoGUI settings
         self.failsafe_enabled = True
         self.gui_pause = 0.001  # Ultra-fast GUI operations
+        
+        # Overlay settings
+        self.overlay_enabled = True
+        self.overlay_opacity = 0.9
+        
+        # Hotkey settings
+        self.toggle_key = 'f9'  # Key to start/stop the bot
     
     def set_max_values(self, max_hp):
         """Set maximum HP value"""

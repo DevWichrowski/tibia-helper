@@ -1,10 +1,14 @@
 import time
 import pyautogui
+import signal
+import sys
 from .config import GameConfig
 from .debug_logger import DebugLogger
+from .hotkey_manager import HotkeyManager
 from ..processing.ocr_processor import OCRProcessor
 from ..processing.region_manager import RegionManager
 from ..monitors.health_monitor import HealthMonitor
+from ..ui.overlay import GameOverlay
 
 
 class GameHelper:
@@ -26,10 +30,28 @@ class GameHelper:
         
         # Control flags
         self.running = True
+        self.paused = False  # Bot paused state (toggled by F9)
+        
+        # Initialize hotkey manager
+        self.hotkey_manager = HotkeyManager(self.config, self._on_toggle)
+        
+        # Initialize overlay (will be started later)
+        self.overlay = None
         
         # Setup PyAutoGUI
         pyautogui.FAILSAFE = self.config.failsafe_enabled
         pyautogui.PAUSE = self.config.gui_pause
+    
+    def _on_toggle(self):
+        """Callback when F9 is pressed to toggle bot state"""
+        self.paused = not self.paused
+        status = "ZATRZYMANY" if self.paused else "AKTYWNY"
+        print(f"\n🎮 Bot {status} (F9)")
+        self.debug_logger.log(f"TOGGLE: Bot state changed to {'PAUSED' if self.paused else 'ACTIVE'}")
+    
+    def _get_paused_state(self):
+        """Get current paused state (for overlay)"""
+        return self.paused
     
     def setup_game_values(self):
         """Setup max HP value"""
@@ -54,6 +76,7 @@ class GameHelper:
         print(f"⚡ Cooldown: {self.config.cooldown}s between key presses")
         print(f"🔄 Monitor frequency: Every {self.config.monitor_frequency} seconds - ENHANCED OCR!")
         print(f"🛡️ SAFETY: Critical healing is ALWAYS checked first to prevent death!")
+        print(f"🎯 Toggle hotkey: {self.config.toggle_key.upper()} to pause/resume bot")
     
     def get_current_values(self):
         """Get current HP value from OCR"""
@@ -67,11 +90,17 @@ class GameHelper:
         """Display current status"""
         hp_status = self.health_monitor.get_hp_status(hp_value)
         
-        status = f"HP: {hp_status['value'] or 'N/A'} ({hp_status['percentage']:.1f}%) [{hp_status['status']}]"
+        pause_indicator = " [PAUSED]" if self.paused else ""
+        status = f"HP: {hp_status['value'] or 'N/A'} ({hp_status['percentage']:.1f}%) [{hp_status['status']}]{pause_indicator}"
         print(status)
     
     def check_and_respond(self, hp_value):
         """Check HP value and respond with appropriate actions"""
+        # Skip healing actions if paused
+        if self.paused:
+            self.debug_logger.log(f"DECISION: Bot is PAUSED - skipping healing check")
+            return
+        
         self.debug_logger.log(f"DECISION: Checking thresholds - HP: {hp_value}")
         
         # Check HP and heal if needed
@@ -89,8 +118,27 @@ class GameHelper:
         print(f"📊 Total heals used:     {summary['total_heals']}")
         print("="*50)
     
+    def _monitoring_cycle(self):
+        """Single monitoring cycle - called by overlay's after() scheduler"""
+        if not self.running:
+            return
+        
+        try:
+            hp_value = self.get_current_values()
+            self.display_status(hp_value)
+            self.check_and_respond(hp_value)
+        except pyautogui.FailSafeException:
+            print("\nFail-safe triggered! Mouse moved to corner.")
+            self.debug_logger.log_monitoring_stop("FAILSAFE")
+            self.running = False
+            if self.overlay:
+                self.overlay.stop()
+        except Exception as e:
+            print(f"\nError in monitoring: {e}")
+            self.debug_logger.log(f"ERROR: {str(e)}")
+    
     def run_monitoring_loop(self):
-        """Main monitoring loop"""
+        """Main monitoring loop with overlay"""
         print("\nStarting health monitoring... - ENHANCED OCR!")
         print("Detection indicators: ✓ = Detected, ✗ = Failed to detect")
         thresholds = self.config.get_threshold_info()
@@ -100,29 +148,37 @@ class GameHelper:
         print("🛠️ Stability Protection: Requires confirmation for dramatic HP drops (prevents false critical healing)")
         print("⚡ Smart failure tracking: Warns after consecutive OCR failures")
         print(f"📝 Debug logging: Detailed OCR analysis saved to {self.config.debug_log_file}")
-        print("Press Ctrl+C to quit")
+        print(f"🎯 Press {self.config.toggle_key.upper()} to pause/resume bot")
+        print("Close overlay window or press Ctrl+C to quit")
         print()
         
         regions = self.region_manager.get_regions()
         self.debug_logger.log_monitoring_start(regions)
         
+        # Start hotkey listener
+        self.hotkey_manager.start()
+        
         try:
-            while self.running:
-                hp_value = self.get_current_values()
-                self.display_status(hp_value)
-                self.check_and_respond(hp_value)
-                
-                time.sleep(self.config.monitor_frequency)
-                
+            if self.config.overlay_enabled:
+                # Create overlay and run with integrated monitoring
+                self.overlay = GameOverlay(
+                    self.config, 
+                    self.health_monitor, 
+                    self._get_paused_state
+                )
+                # This blocks until overlay is closed
+                self.overlay.run_with_monitoring(self._monitoring_cycle)
+            else:
+                # Run without overlay (fallback mode)
+                while self.running:
+                    self._monitoring_cycle()
+                    time.sleep(self.config.monitor_frequency)
         except KeyboardInterrupt:
             print("\nStopped by user")
             self.debug_logger.log_monitoring_stop("USER")
-        except pyautogui.FailSafeException:
-            print("\nFail-safe triggered! Mouse moved to corner.")
-            self.debug_logger.log_monitoring_stop("FAILSAFE")
-        except Exception as e:
-            print(f"\nError: {e}")
-            self.debug_logger.log_monitoring_stop(f"ERROR: {str(e)}")
+        finally:
+            self.running = False
+            self.hotkey_manager.stop()
         
         # Display healing summary before exit
         self.display_healing_summary()
@@ -166,4 +222,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    main()
+ 
