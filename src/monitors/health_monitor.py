@@ -7,9 +7,9 @@ class HealthMonitor:
         self.config = config
         self.debug_logger = debug_logger
         
-        # Timing tracking
-        self.last_heal_press = 0
-        self.last_critical_heal_press = 0
+        # Timing tracking - GLOBAL cooldown for ALL heals
+        # This prevents race conditions where moderate heal blocks critical heal
+        self.last_heal_press = 0  # Single timer for ANY heal type
         
         # Failure tracking
         self.consecutive_failures = 0
@@ -67,15 +67,16 @@ class HealthMonitor:
         # ==========================================
         if hp_percentage < self.config.hp_critical_threshold:
             self.debug_log(f"🚨 CRITICAL ALERT: HP {hp_percentage*100:.1f}% < {self.config.hp_critical_threshold*100}% - CRITICAL HEALING!")
-            old_time = self.last_critical_heal_press
-            self.last_critical_heal_press = self.press_key_with_cooldown(
+            old_time = self.last_heal_press
+            # Use GLOBAL cooldown timer - prevents race condition with moderate heal
+            self.last_heal_press = self.press_key_with_cooldown(
                 self.config.critical_heal_key, 
-                self.last_critical_heal_press, 
+                self.last_heal_press,  # GLOBAL timer
                 "🚨 CRITICAL HEAL",
-                cooldown=self.config.critical_cooldown
+                cooldown=self.config.cooldown  # Use standard cooldown
             )
             # Increment counter only if key was actually pressed
-            if self.last_critical_heal_press > old_time:
+            if self.last_heal_press > old_time:
                 self.critical_heal_count += 1
         
         # ==========================================
@@ -84,11 +85,12 @@ class HealthMonitor:
         elif hp_percentage < self.config.hp_threshold:
             self.debug_log(f"DECISION: HP {hp_percentage*100:.1f}% needs moderate healing")
             old_time = self.last_heal_press
+            # Use SAME global cooldown timer - shares cooldown with critical heal
             self.last_heal_press = self.press_key_with_cooldown(
                 self.config.heal_key, 
-                self.last_heal_press, 
+                self.last_heal_press,  # GLOBAL timer (same as critical)
                 "MODERATE HEAL",
-                cooldown=self.config.critical_cooldown
+                cooldown=self.config.cooldown  # Same cooldown for all heals
             )
             # Increment counter only if key was actually pressed
             if self.last_heal_press > old_time:
