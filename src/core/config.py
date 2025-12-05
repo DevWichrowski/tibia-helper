@@ -51,6 +51,13 @@ class GameConfig:
         self.skinner_min_delay = skinner.get('min_delay', 0.2)
         self.skinner_max_delay = skinner.get('max_delay', 0.4)
         self.skinner_enabled_on_start = skinner.get('enabled_on_start', False)
+        
+        # Auto-haste settings
+        auto_haste = config_data.get('auto_haste', {})
+        self.haste_hotkey = auto_haste.get('hotkey', 'x')
+        self.haste_min_interval = auto_haste.get('min_interval', 27)
+        self.haste_max_interval = auto_haste.get('max_interval', 30)
+        self.haste_enabled_on_start = auto_haste.get('enabled_on_start', False)
     
     def _load_config(self):
         """Load config from JSON file"""

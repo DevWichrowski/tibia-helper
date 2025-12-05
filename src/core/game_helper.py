@@ -9,6 +9,7 @@ from ..processing.ocr_processor import OCRProcessor
 from ..processing.region_manager import RegionManager
 from ..monitors.health_monitor import HealthMonitor
 from ..monitors.skinner import Skinner
+from ..monitors.auto_haste import AutoHaste
 from ..ui.overlay import GameOverlay
 
 
@@ -32,16 +33,15 @@ class GameHelper:
         # Initialize skinner
         self.skinner = Skinner(self.config, self.debug_logger)
         
+        # Initialize auto-haste
+        self.auto_haste = AutoHaste(self.config, self.debug_logger)
+        
         # Control flags
         self.running = True
         self.paused = False  # Bot paused state (toggled by F9)
         
-        # Initialize hotkey manager with F9 and F10 callbacks
-        self.hotkey_manager = HotkeyManager(
-            self.config, 
-            self._on_toggle,
-            self._on_skinner_toggle
-        )
+        # Initialize hotkey manager (F9 only)
+        self.hotkey_manager = HotkeyManager(self.config, self._on_toggle)
         
         # Initialize overlay (will be started later)
         self.overlay = None
@@ -56,10 +56,6 @@ class GameHelper:
         status = "ZATRZYMANY" if self.paused else "AKTYWNY"
         print(f"\n🎮 Bot {status} (F9)")
         self.debug_logger.log(f"TOGGLE: Bot state changed to {'PAUSED' if self.paused else 'ACTIVE'}")
-    
-    def _on_skinner_toggle(self):
-        """Callback when F10 is pressed to toggle skinner"""
-        self.skinner.toggle()
     
     def _get_paused_state(self):
         """Get current paused state (for overlay)"""
@@ -167,9 +163,10 @@ class GameHelper:
         regions = self.region_manager.get_regions()
         self.debug_logger.log_monitoring_start(regions)
         
-        # Start hotkey listener and skinner
+        # Start hotkey listener, skinner, and auto-haste
         self.hotkey_manager.start()
         self.skinner.start()
+        self.auto_haste.start()
         
         try:
             if self.config.overlay_enabled:
@@ -178,7 +175,8 @@ class GameHelper:
                     self.config, 
                     self.health_monitor, 
                     self._get_paused_state,
-                    self.skinner
+                    self.skinner,
+                    self.auto_haste
                 )
                 # This blocks until overlay is closed
                 self.overlay.run_with_monitoring(self._monitoring_cycle)
@@ -194,6 +192,7 @@ class GameHelper:
             self.running = False
             self.hotkey_manager.stop()
             self.skinner.stop()
+            self.auto_haste.stop()
         
         # Display healing summary before exit
         self.display_healing_summary()

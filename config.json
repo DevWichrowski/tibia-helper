@@ -13,9 +13,14 @@
         "min_delay": 0.2,
         "max_delay": 0.4
     },
+    "auto_haste": {
+        "enabled_on_start": false,
+        "hotkey": "x",
+        "min_interval": 27,
+        "max_interval": 30
+    },
     "hotkeys": {
-        "toggle_bot": "f9",
-        "toggle_skinner": "f10"
+        "toggle_bot": "f9"
     },
     "overlay": {
         "enabled": true,

@@ -4,6 +4,7 @@ Game Overlay - Draggable, semi-transparent panel for displaying healer status
 Uses tkinter to create a game-style overlay panel that shows:
 - Bot status (active/paused)
 - Skinner status with toggle button
+- Auto-Haste status with toggle button
 - HP thresholds
 - Heal counters (normal and critical)
 - Compact hotkey list
@@ -15,11 +16,12 @@ import tkinter as tk
 
 
 class GameOverlay:
-    def __init__(self, config, health_monitor, get_paused_callback, skinner=None):
+    def __init__(self, config, health_monitor, get_paused_callback, skinner=None, auto_haste=None):
         self.config = config
         self.health_monitor = health_monitor
         self.get_paused = get_paused_callback
         self.skinner = skinner
+        self.auto_haste = auto_haste
         
         self.root = None
         self._running = False
@@ -36,6 +38,8 @@ class GameOverlay:
         self.status_indicator = None
         self.skinner_btn = None
         self.skinner_clicks_label = None
+        self.haste_btn = None
+        self.haste_casts_label = None
         self.normal_heals_label = None
         self.critical_heals_label = None
     
@@ -129,6 +133,37 @@ class GameOverlay:
             )
             self.skinner_clicks_label.pack(side='left', padx=(5, 0))
         
+        # Auto-Haste toggle button
+        if self.auto_haste:
+            haste_frame = tk.Frame(main_frame, bg='#1a1a2e')
+            haste_frame.pack(fill='x', pady=2)
+            
+            tk.Label(
+                haste_frame, text="⚡ Haste:", font=('Helvetica', 10),
+                fg='#a0a0a0', bg='#1a1a2e'
+            ).pack(side='left')
+            
+            self.haste_btn = tk.Button(
+                haste_frame,
+                text="OFF",
+                font=('Helvetica', 9, 'bold'),
+                fg='#ffffff',
+                bg='#8b0000',
+                activebackground='#a52a2a',
+                relief='flat',
+                padx=8,
+                pady=1,
+                cursor='hand2',
+                command=self._toggle_haste
+            )
+            self.haste_btn.pack(side='left', padx=(5, 0))
+            
+            self.haste_casts_label = tk.Label(
+                haste_frame, text="(0)", font=('Helvetica', 9),
+                fg='#00aaff', bg='#1a1a2e'
+            )
+            self.haste_casts_label.pack(side='left', padx=(5, 0))
+        
         # Separator
         tk.Frame(main_frame, height=1, bg='#444').pack(fill='x', pady=4)
         
@@ -192,7 +227,7 @@ class GameOverlay:
         hotkeys_frame = tk.Frame(main_frame, bg='#1a1a2e')
         hotkeys_frame.pack(fill='x', pady=1)
         
-        hotkey_text = f"F9:bot  F10:skin  {self.config.heal_key.upper()}:heal  {self.config.critical_heal_key.upper()}:crit"
+        hotkey_text = f"F9:bot  {self.config.heal_key.upper()}:heal  {self.config.critical_heal_key.upper()}:crit"
         
         tk.Label(
             hotkeys_frame, text=hotkey_text,
@@ -208,6 +243,12 @@ class GameOverlay:
             self.skinner.toggle()
             self._update_skinner_btn()
     
+    def _toggle_haste(self):
+        """Toggle auto-haste on/off"""
+        if self.auto_haste:
+            self.auto_haste.toggle()
+            self._update_haste_btn()
+    
     def _update_skinner_btn(self):
         """Update skinner button appearance"""
         if self.skinner and self.skinner_btn:
@@ -215,6 +256,14 @@ class GameOverlay:
                 self.skinner_btn.config(text="ON", bg='#006400', activebackground='#228b22')
             else:
                 self.skinner_btn.config(text="OFF", bg='#8b0000', activebackground='#a52a2a')
+    
+    def _update_haste_btn(self):
+        """Update haste button appearance"""
+        if self.auto_haste and self.haste_btn:
+            if self.auto_haste.is_enabled():
+                self.haste_btn.config(text="ON", bg='#006400', activebackground='#228b22')
+            else:
+                self.haste_btn.config(text="OFF", bg='#8b0000', activebackground='#a52a2a')
     
     def _start_drag(self, event):
         self._drag_start_x = event.x
@@ -240,10 +289,8 @@ class GameOverlay:
             error_status = self.health_monitor.get_error_status()
             
             if error_status['is_warning']:
-                # Critical error - many OCR failures
                 self.status_indicator.config(text="● BŁĄD OCR", fg='#ff0000')
             elif error_status['has_error']:
-                # Minor error - some OCR failures
                 self.status_indicator.config(text="● WYKRYWANIE...", fg='#ffaa00')
             elif is_paused:
                 self.status_indicator.config(text="● STOP", fg='#ff6b6b')
@@ -255,6 +302,12 @@ class GameOverlay:
                 self._update_skinner_btn()
                 stats = self.skinner.get_stats()
                 self.skinner_clicks_label.config(text=f"({stats['click_count']})")
+            
+            # Update auto-haste
+            if self.auto_haste:
+                self._update_haste_btn()
+                stats = self.auto_haste.get_stats()
+                self.haste_casts_label.config(text=f"({stats['cast_count']})")
             
             # Update heal counters
             summary = self.health_monitor.get_healing_summary()
