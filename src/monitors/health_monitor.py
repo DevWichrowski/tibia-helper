@@ -18,6 +18,24 @@ class HealthMonitor:
         self.moderate_heal_count = 0
         self.critical_heal_count = 0
         
+        # Enable/disable flags for healing
+        self.heal_enabled = True
+        self.critical_enabled = True
+    
+    def toggle_heal(self):
+        """Toggle normal heal on/off"""
+        self.heal_enabled = not self.heal_enabled
+        status = "WŁĄCZONY" if self.heal_enabled else "WYŁĄCZONY"
+        print(f"💊 Heal {status}")
+        return self.heal_enabled
+    
+    def toggle_critical(self):
+        """Toggle critical heal on/off"""
+        self.critical_enabled = not self.critical_enabled
+        status = "WŁĄCZONY" if self.critical_enabled else "WYŁĄCZONY"
+        print(f"🚨 Critical {status}")
+        return self.critical_enabled
+        
     def debug_log(self, message):
         """Write debug message through the logger"""
         if self.debug_logger:
@@ -66,30 +84,36 @@ class HealthMonitor:
         # STEP 1: CRITICAL HEALING - FIRST PRIORITY!
         # ==========================================
         if hp_percentage < self.config.hp_critical_threshold:
-            self.debug_log(f"🚨 CRITICAL ALERT: HP {hp_percentage*100:.1f}% < {self.config.hp_critical_threshold*100}% - CRITICAL HEALING!")
-            old_time = self.last_heal_press
-            # Use GLOBAL cooldown timer - prevents race condition with moderate heal
-            self.last_heal_press = self.press_key_with_cooldown(
-                self.config.critical_heal_key, 
-                self.last_heal_press,  # GLOBAL timer
-                "🚨 CRITICAL HEAL",
-                cooldown=self.config.cooldown  # Use standard cooldown
-            )
-            # Increment counter only if key was actually pressed
-            if self.last_heal_press > old_time:
-                self.critical_heal_count += 1
+            if not self.critical_enabled:
+                self.debug_log(f"CRITICAL HEAL DISABLED - skipping")
+            else:
+                self.debug_log(f"🚨 CRITICAL ALERT: HP {hp_percentage*100:.1f}% < {self.config.hp_critical_threshold*100}% - CRITICAL HEALING!")
+                old_time = self.last_heal_press
+                # Use GLOBAL cooldown timer - prevents race condition with moderate heal
+                self.last_heal_press = self.press_key_with_cooldown(
+                    self.config.critical_heal_key, 
+                    self.last_heal_press,  # GLOBAL timer
+                    "🚨 CRITICAL HEAL",
+                    cooldown=self.config.cooldown  # Use standard cooldown
+                )
+                # Increment counter only if key was actually pressed
+                if self.last_heal_press > old_time:
+                    self.critical_heal_count += 1
         
         # ==========================================
         # STEP 2: MODERATE HEALING - SECOND PRIORITY
         # ==========================================
         elif hp_percentage < self.config.hp_threshold:
-            self.debug_log(f"DECISION: HP {hp_percentage*100:.1f}% needs moderate healing")
-            old_time = self.last_heal_press
-            # Use SAME global cooldown timer - shares cooldown with critical heal
-            self.last_heal_press = self.press_key_with_cooldown(
-                self.config.heal_key, 
-                self.last_heal_press,  # GLOBAL timer (same as critical)
-                "MODERATE HEAL",
+            if not self.heal_enabled:
+                self.debug_log(f"MODERATE HEAL DISABLED - skipping")
+            else:
+                self.debug_log(f"DECISION: HP {hp_percentage*100:.1f}% needs moderate healing")
+                old_time = self.last_heal_press
+                # Use SAME global cooldown timer - shares cooldown with critical heal
+                self.last_heal_press = self.press_key_with_cooldown(
+                    self.config.heal_key, 
+                    self.last_heal_press,  # GLOBAL timer (same as critical)
+                    "MODERATE HEAL",
                 cooldown=self.config.cooldown  # Same cooldown for all heals
             )
             # Increment counter only if key was actually pressed
@@ -125,4 +149,12 @@ class HealthMonitor:
             'moderate_heals': self.moderate_heal_count,
             'critical_heals': self.critical_heal_count,
             'total_heals': self.moderate_heal_count + self.critical_heal_count
-        } 
+        }
+    
+    def get_error_status(self):
+        """Get current error status for overlay"""
+        return {
+            'consecutive_failures': self.consecutive_failures,
+            'has_error': self.consecutive_failures >= 3,  # 3+ failures = error
+            'is_warning': self.consecutive_failures >= self.config.max_failures_warning
+        }
