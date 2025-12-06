@@ -114,11 +114,11 @@ class HealthMonitor:
                     self.config.heal_key, 
                     self.last_heal_press,  # GLOBAL timer (same as critical)
                     "MODERATE HEAL",
-                cooldown=self.config.cooldown  # Same cooldown for all heals
-            )
-            # Increment counter only if key was actually pressed
-            if self.last_heal_press > old_time:
-                self.moderate_heal_count += 1
+                    cooldown=self.config.cooldown  # Same cooldown for all heals
+                )
+                # Increment counter only if key was actually pressed
+                if self.last_heal_press > old_time:
+                    self.moderate_heal_count += 1
         
         # ==========================================
         # STEP 3: HEALTHY - NO HEALING NEEDED

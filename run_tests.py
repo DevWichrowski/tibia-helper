@@ -18,7 +18,10 @@ def run_tests():
     
     test_files = [
         ('Basic Tests', 'tests/test_health_monitor_simple.py'),
-        ('Comprehensive Critical Tests', 'tests/test_health_monitor_comprehensive.py')
+        ('Comprehensive Critical Tests', 'tests/test_health_monitor_comprehensive.py'),
+        ('Extended Health Tests', 'tests/test_health_monitor_extended.py'),
+        ('Auto-Haste Tests', 'tests/test_auto_haste.py'),
+        ('Skinner Tests', 'tests/test_skinner.py'),
     ]
     
     all_passed = True
@@ -67,6 +70,8 @@ def run_tests():
         print("⚔️ Combat damage sequences verified") 
         print("🔄 Recovery scenarios working")
         print("🛠️ Edge cases and error handling robust")
+        print("⚡ Auto-Haste functionality verified")
+        print("🔪 Skinner right-click logic tested")
         print()
         print("🎮 READY FOR GAME MONITORING - WILL KEEP YOU ALIVE!")
         
